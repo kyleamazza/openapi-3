@@ -644,7 +644,7 @@ export class OAS3Parser {
           };
         } else if (OAS3.isString(schema) && schema.enum) {
           const name = {
-            value: schemaOrRef.$ref.value.substring(14),
+            value: schemaOrRef.$ref.value.substring(prefix.length),
             loc: OAS3.refRange(this.schema.node, schemaOrRef.$ref.value),
           };
 
@@ -960,9 +960,10 @@ export class OAS3Parser {
     if (!success) return;
 
     const response = this.resolve(success, OAS3.ResponseNode);
+    const prefix = '#/components/responses/';
     const name =
-      OAS3.isRefNode(success) && success.$ref.value.startsWith('#/responses/')
-        ? success.$ref.value.substring(12)
+      OAS3.isRefNode(success) && success.$ref.value.startsWith(prefix)
+        ? success.$ref.value.substring(prefix.length)
         : undefined;
 
     const schemaOrRef = this.getResponseSchemaOrRef(response);

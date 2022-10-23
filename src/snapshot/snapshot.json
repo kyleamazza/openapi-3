@@ -1785,10 +1785,7 @@
         },
         {
           "name": { "value": "size", "loc": "500;11;17;14653;14659" },
-          "typeName": {
-            "value": "chemas/productSize",
-            "loc": "503;7;20;14733;14746"
-          },
+          "typeName": { "value": "productSize", "loc": "503;7;20;14733;14746" },
           "isPrimitive": false,
           "isArray": false,
           "rules": [],
@@ -1843,10 +1840,7 @@
         },
         {
           "name": { "value": "size", "loc": "533;11;17;15686;15692" },
-          "typeName": {
-            "value": "chemas/productSize",
-            "loc": "503;7;20;14733;14746"
-          },
+          "typeName": { "value": "productSize", "loc": "503;7;20;14733;14746" },
           "isPrimitive": false,
           "isArray": false,
           "rules": [],
@@ -1901,10 +1895,7 @@
         },
         {
           "name": { "value": "size", "loc": "533;11;17;15686;15692" },
-          "typeName": {
-            "value": "chemas/productSize",
-            "loc": "503;7;20;14733;14746"
-          },
+          "typeName": { "value": "productSize", "loc": "503;7;20;14733;14746" },
           "isPrimitive": false,
           "isArray": false,
           "rules": [],
@@ -2042,7 +2033,7 @@
       "loc": "429;44;75;12560;12591"
     },
     {
-      "name": { "value": "chemas/productSize", "loc": "503;7;20;14733;14746" },
+      "name": { "value": "productSize", "loc": "503;7;20;14733;14746" },
       "values": [
         { "value": "small", "loc": "503;51;58;14777;14784" },
         { "value": "medium", "loc": "503;60;68;14786;14794" },
