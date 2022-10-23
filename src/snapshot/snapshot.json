@@ -1,0 +1,2082 @@
+{
+  "basketry": "1",
+  "sourcePath": "src/snapshot/example.oas3.json",
+  "title": { "value": "BasketryExample", "loc": "4;14;32;49;67" },
+  "majorVersion": { "value": 1, "loc": "6;16;27;158;169" },
+  "interfaces": [
+    {
+      "name": "gizmo",
+      "methods": [
+        {
+          "name": { "value": "getGizmos", "loc": "20;24;35;534;545" },
+          "security": [
+            [
+              {
+                "type": { "value": "oauth2", "loc": "594;17;25;17415;17423" },
+                "name": {
+                  "value": "oauth2Auth",
+                  "loc": "593;7;19;17383;17395"
+                },
+                "flows": [
+                  {
+                    "type": {
+                      "value": "implicit",
+                      "loc": "596;11;21;17454;17464"
+                    },
+                    "authorizationUrl": {
+                      "value": "https://example.com/auth",
+                      "loc": "597;33;59;17500;17526"
+                    },
+                    "scopes": [
+                      {
+                        "name": {
+                          "value": "read:gizmos",
+                          "loc": "599;15;28;17566;17579"
+                        },
+                        "description": {
+                          "value": "Access gizmo data",
+                          "loc": "599;30;49;17581;17600"
+                        },
+                        "loc": "599;15;49;17566;17600"
+                      },
+                      {
+                        "name": {
+                          "value": "write:gizmos",
+                          "loc": "600;15;29;17616;17630"
+                        },
+                        "description": {
+                          "value": "Write gizmo data",
+                          "loc": "600;31;49;17632;17650"
+                        },
+                        "loc": "600;15;49;17616;17650"
+                      },
+                      {
+                        "name": {
+                          "value": "admin:gizmos",
+                          "loc": "601;15;29;17666;17680"
+                        },
+                        "description": {
+                          "value": "Manage gizmos",
+                          "loc": "601;31;46;17682;17697"
+                        },
+                        "loc": "601;15;46;17666;17697"
+                      }
+                    ],
+                    "loc": "593;7;605;8;17383;17741"
+                  }
+                ],
+                "loc": "593;7;605;8;17383;17741"
+              }
+            ]
+          ],
+          "parameters": [
+            {
+              "name": { "value": "search", "loc": "23;21;29;603;611" },
+              "typeName": { "value": "string", "loc": "26;23;31;686;694" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "22;11;40;12;581;1190",
+              "meta": [
+                {
+                  "key": { "value": "metaString", "loc": "34;13;27;963;977" },
+                  "value": { "value": "bar", "loc": "34;29;34;979;984" }
+                },
+                {
+                  "key": { "value": "metaNumber", "loc": "35;13;27;998;1012" },
+                  "value": { "value": 1234, "loc": "35;29;33;1014;1018" }
+                },
+                {
+                  "key": {
+                    "value": "metaBoolean",
+                    "loc": "36;13;28;1032;1047"
+                  },
+                  "value": { "value": true, "loc": "36;30;34;1049;1053" }
+                },
+                {
+                  "key": { "value": "metaNull", "loc": "37;13;25;1067;1079" },
+                  "value": { "value": null, "loc": "37;27;31;1081;1085" }
+                },
+                {
+                  "key": { "value": "metaObject", "loc": "38;13;27;1099;1113" },
+                  "value": {
+                    "value": { "foo": "bar" },
+                    "loc": "38;29;45;1115;1131"
+                  }
+                },
+                {
+                  "key": { "value": "metaArray", "loc": "39;13;26;1145;1158" },
+                  "value": {
+                    "value": [{ "foo": "bar" }],
+                    "loc": "39;28;46;1160;1178"
+                  }
+                }
+              ]
+            }
+          ],
+          "description": {
+            "value": "Only has a summary",
+            "loc": "19;20;40;489;509"
+          },
+          "returnType": {
+            "typeName": { "value": "getGizmosResponse" },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "47;27;56;18;1375;1687"
+          },
+          "loc": "18;7;62;8;461;1804"
+        },
+        {
+          "name": { "value": "updateGizmo", "loc": "64;24;37;1844;1857" },
+          "security": [
+            [
+              {
+                "type": { "value": "oauth2", "loc": "594;17;25;17415;17423" },
+                "name": {
+                  "value": "oauth2Auth",
+                  "loc": "593;7;19;17383;17395"
+                },
+                "flows": [
+                  {
+                    "type": {
+                      "value": "implicit",
+                      "loc": "596;11;21;17454;17464"
+                    },
+                    "authorizationUrl": {
+                      "value": "https://example.com/auth",
+                      "loc": "597;33;59;17500;17526"
+                    },
+                    "scopes": [
+                      {
+                        "name": {
+                          "value": "read:gizmos",
+                          "loc": "599;15;28;17566;17579"
+                        },
+                        "description": {
+                          "value": "Access gizmo data",
+                          "loc": "599;30;49;17581;17600"
+                        },
+                        "loc": "599;15;49;17566;17600"
+                      },
+                      {
+                        "name": {
+                          "value": "write:gizmos",
+                          "loc": "600;15;29;17616;17630"
+                        },
+                        "description": {
+                          "value": "Write gizmo data",
+                          "loc": "600;31;49;17632;17650"
+                        },
+                        "loc": "600;15;49;17616;17650"
+                      },
+                      {
+                        "name": {
+                          "value": "admin:gizmos",
+                          "loc": "601;15;29;17666;17680"
+                        },
+                        "description": {
+                          "value": "Manage gizmos",
+                          "loc": "601;31;46;17682;17697"
+                        },
+                        "loc": "601;15;46;17666;17697"
+                      }
+                    ],
+                    "loc": "593;7;605;8;17383;17741"
+                  }
+                ],
+                "loc": "593;7;605;8;17383;17741"
+              }
+            ]
+          ],
+          "parameters": [
+            {
+              "name": { "value": "factors", "loc": "67;21;30;1915;1924" },
+              "description": {
+                "value": "array of primitive",
+                "loc": "69;28;48;1980;2000"
+              },
+              "typeName": { "value": "string", "loc": "76;61;69;2234;2242" },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [
+                {
+                  "id": "array-max-items",
+                  "max": { "value": 6, "loc": "73;27;28;2111;2112" },
+                  "loc": "73;15;28;2099;2112"
+                },
+                {
+                  "id": "array-min-items",
+                  "min": { "value": 2, "loc": "74;27;28;2140;2141" },
+                  "loc": "74;15;28;2128;2141"
+                },
+                {
+                  "id": "string-pattern",
+                  "pattern": {
+                    "value": "[0-9a-fA-F]+",
+                    "loc": "76;37;51;2210;2224"
+                  },
+                  "loc": "76;26;51;2199;2224"
+                }
+              ],
+              "loc": "66;11;78;12;1893;2270"
+            }
+          ],
+          "returnType": {
+            "typeName": { "value": "gizmo", "loc": "495;7;14;14487;14494" },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "495;16;502;8;14496;14725"
+          },
+          "loc": "63;7;89;8;1812;2594"
+        },
+        {
+          "name": { "value": "createGizmo", "loc": "93;24;37;2769;2782" },
+          "security": [
+            [
+              {
+                "type": { "value": "oauth2", "loc": "594;17;25;17415;17423" },
+                "name": {
+                  "value": "oauth2Auth",
+                  "loc": "593;7;19;17383;17395"
+                },
+                "flows": [
+                  {
+                    "type": {
+                      "value": "implicit",
+                      "loc": "596;11;21;17454;17464"
+                    },
+                    "authorizationUrl": {
+                      "value": "https://example.com/auth",
+                      "loc": "597;33;59;17500;17526"
+                    },
+                    "scopes": [
+                      {
+                        "name": {
+                          "value": "read:gizmos",
+                          "loc": "599;15;28;17566;17579"
+                        },
+                        "description": {
+                          "value": "Access gizmo data",
+                          "loc": "599;30;49;17581;17600"
+                        },
+                        "loc": "599;15;49;17566;17600"
+                      },
+                      {
+                        "name": {
+                          "value": "write:gizmos",
+                          "loc": "600;15;29;17616;17630"
+                        },
+                        "description": {
+                          "value": "Write gizmo data",
+                          "loc": "600;31;49;17632;17650"
+                        },
+                        "loc": "600;15;49;17616;17650"
+                      },
+                      {
+                        "name": {
+                          "value": "admin:gizmos",
+                          "loc": "601;15;29;17666;17680"
+                        },
+                        "description": {
+                          "value": "Manage gizmos",
+                          "loc": "601;31;46;17682;17697"
+                        },
+                        "loc": "601;15;46;17666;17697"
+                      }
+                    ],
+                    "loc": "593;7;605;8;17383;17741"
+                  }
+                ],
+                "loc": "593;7;605;8;17383;17741"
+              }
+            ]
+          ],
+          "parameters": [
+            {
+              "name": { "value": "size", "loc": "96;21;27;2840;2846" },
+              "description": {
+                "value": "Anonymous enum",
+                "loc": "98;28;44;2902;2918"
+              },
+              "typeName": { "value": "createGizmoSize" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "95;11;103;12;2818;3056"
+            }
+          ],
+          "description": [
+            {
+              "value": "Has a summary in addition to a description",
+              "loc": "91;20;64;2631;2675"
+            },
+            {
+              "value": "Has a description in addition to a summary",
+              "loc": "92;24;68;2700;2744"
+            }
+          ],
+          "returnType": {
+            "typeName": { "value": "gizmo", "loc": "495;7;14;14487;14494" },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "495;16;502;8;14496;14725"
+          },
+          "loc": "90;7;114;8;2602;3364"
+        }
+      ],
+      "protocols": {
+        "http": [
+          {
+            "path": { "value": "/gizmos", "loc": "17;5;14;442;451" },
+            "methods": [
+              {
+                "name": { "value": "getGizmos", "loc": "20;24;35;534;545" },
+                "verb": { "value": "get", "loc": "18;7;12;461;466" },
+                "parameters": [
+                  {
+                    "name": { "value": "search", "loc": "23;21;29;603;611" },
+                    "in": { "value": "query", "loc": "24;19;26;631;638" },
+                    "loc": "22;11;40;12;581;1190"
+                  }
+                ],
+                "successCode": { "value": 200, "loc": "43;11;20;1235;1244" },
+                "loc": "18;7;62;8;461;1804"
+              },
+              {
+                "name": { "value": "updateGizmo", "loc": "64;24;37;1844;1857" },
+                "verb": { "value": "put", "loc": "63;7;12;1812;1817" },
+                "parameters": [
+                  {
+                    "name": { "value": "factors", "loc": "67;21;30;1915;1924" },
+                    "in": { "value": "query", "loc": "68;19;26;1944;1951" },
+                    "array": { "value": "csv", "loc": "70;22;28;2023;2029" },
+                    "loc": "66;11;78;12;1893;2270"
+                  }
+                ],
+                "successCode": { "value": 200, "loc": "81;11;20;2315;2324" },
+                "loc": "63;7;89;8;1812;2594"
+              },
+              {
+                "name": { "value": "createGizmo", "loc": "93;24;37;2769;2782" },
+                "verb": { "value": "post", "loc": "90;7;13;2602;2608" },
+                "parameters": [
+                  {
+                    "name": { "value": "size", "loc": "96;21;27;2840;2846" },
+                    "in": { "value": "query", "loc": "97;19;26;2866;2873" },
+                    "loc": "95;11;103;12;2818;3056"
+                  }
+                ],
+                "successCode": { "value": 201, "loc": "106;11;20;3101;3110" },
+                "loc": "90;7;114;8;2602;3364"
+              }
+            ],
+            "loc": "17;5;115;6;442;3370"
+          }
+        ]
+      }
+    },
+    {
+      "name": "widget",
+      "methods": [
+        {
+          "name": { "value": "getWidgets", "loc": "118;24;36;3428;3440" },
+          "security": [
+            [
+              {
+                "type": { "value": "apiKey", "loc": "587;31;39;17215;17223" },
+                "name": {
+                  "value": "apiKeyAuth",
+                  "loc": "587;7;19;17191;17203"
+                },
+                "parameter": {
+                  "value": "x-apikey",
+                  "loc": "587;49;59;17233;17243"
+                },
+                "in": { "value": "header", "loc": "587;67;75;17251;17259" },
+                "loc": "587;7;77;17191;17261"
+              }
+            ]
+          ],
+          "parameters": [],
+          "returnType": {
+            "typeName": { "value": "widget", "loc": "504;7;15;14814;14822" },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "504;17;512;8;14824;15046"
+          },
+          "loc": "117;7;127;8;3396;3709"
+        },
+        {
+          "name": { "value": "putWidget", "loc": "129;24;35;3749;3760" },
+          "security": [
+            [
+              {
+                "type": { "value": "apiKey", "loc": "587;31;39;17215;17223" },
+                "name": {
+                  "value": "apiKeyAuth",
+                  "loc": "587;7;19;17191;17203"
+                },
+                "parameter": {
+                  "value": "x-apikey",
+                  "loc": "587;49;59;17233;17243"
+                },
+                "in": { "value": "header", "loc": "587;67;75;17251;17259" },
+                "loc": "587;7;77;17191;17261"
+              }
+            ]
+          ],
+          "parameters": [],
+          "loc": "128;7;133;8;3717;3875"
+        },
+        {
+          "name": { "value": "createWidget", "loc": "135;24;38;3916;3930" },
+          "security": [
+            [
+              {
+                "type": { "value": "apiKey", "loc": "587;31;39;17215;17223" },
+                "name": {
+                  "value": "apiKeyAuth",
+                  "loc": "587;7;19;17191;17203"
+                },
+                "parameter": {
+                  "value": "x-apikey",
+                  "loc": "587;49;59;17233;17243"
+                },
+                "in": { "value": "header", "loc": "587;67;75;17251;17259" },
+                "loc": "587;7;77;17191;17261"
+              }
+            ]
+          ],
+          "parameters": [],
+          "loc": "134;7;156;8;3883;4511",
+          "meta": [
+            {
+              "key": {
+                "value": "codegen-request-body-name",
+                "loc": "155;9;38;4466;4495"
+              },
+              "value": { "value": "body", "loc": "155;40;46;4497;4503" }
+            }
+          ]
+        },
+        {
+          "name": { "value": "getWidgetFoo", "loc": "160;24;38;4584;4598" },
+          "security": [
+            [
+              {
+                "type": { "value": "apiKey", "loc": "587;31;39;17215;17223" },
+                "name": {
+                  "value": "apiKeyAuth",
+                  "loc": "587;7;19;17191;17203"
+                },
+                "parameter": {
+                  "value": "x-apikey",
+                  "loc": "587;49;59;17233;17243"
+                },
+                "in": { "value": "header", "loc": "587;67;75;17251;17259" },
+                "loc": "587;7;77;17191;17261"
+              }
+            ]
+          ],
+          "parameters": [
+            {
+              "name": { "value": "id", "loc": "163;21;25;4656;4660" },
+              "description": {
+                "value": "The widget ID",
+                "loc": "165;28;43;4715;4730"
+              },
+              "typeName": { "value": "string", "loc": "167;50;58;4811;4819" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "162;11;168;12;4634;4833"
+            }
+          ],
+          "returnType": {
+            "typeName": { "value": "widget", "loc": "504;7;15;14814;14822" },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "504;17;512;8;14824;15046"
+          },
+          "loc": "159;7;178;8;4552;5112"
+        },
+        {
+          "name": { "value": "deleteWidgetFoo", "loc": "180;24;41;5155;5172" },
+          "security": [
+            [
+              {
+                "type": { "value": "apiKey", "loc": "587;31;39;17215;17223" },
+                "name": {
+                  "value": "apiKeyAuth",
+                  "loc": "587;7;19;17191;17203"
+                },
+                "parameter": {
+                  "value": "x-apikey",
+                  "loc": "587;49;59;17233;17243"
+                },
+                "in": { "value": "header", "loc": "587;67;75;17251;17259" },
+                "loc": "587;7;77;17191;17261"
+              }
+            ]
+          ],
+          "parameters": [
+            {
+              "name": { "value": "id", "loc": "183;21;25;5230;5234" },
+              "description": {
+                "value": "The widget ID",
+                "loc": "185;28;43;5289;5304"
+              },
+              "typeName": { "value": "string", "loc": "187;50;58;5385;5393" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "182;11;188;12;5208;5407"
+            }
+          ],
+          "loc": "179;7;196;8;5120;5578"
+        }
+      ],
+      "protocols": {
+        "http": [
+          {
+            "path": { "value": "/widgets", "loc": "116;5;15;3376;3386" },
+            "methods": [
+              {
+                "name": { "value": "getWidgets", "loc": "118;24;36;3428;3440" },
+                "verb": { "value": "get", "loc": "117;7;12;3396;3401" },
+                "parameters": [],
+                "successCode": { "value": 200, "loc": "120;11;20;3475;3484" },
+                "loc": "117;7;127;8;3396;3709"
+              },
+              {
+                "name": { "value": "putWidget", "loc": "129;24;35;3749;3760" },
+                "verb": { "value": "put", "loc": "128;7;12;3717;3722" },
+                "parameters": [],
+                "successCode": { "value": 200 },
+                "loc": "128;7;133;8;3717;3875"
+              },
+              {
+                "name": {
+                  "value": "createWidget",
+                  "loc": "135;24;38;3916;3930"
+                },
+                "verb": { "value": "post", "loc": "134;7;13;3883;3889" },
+                "parameters": [],
+                "successCode": { "value": 204, "loc": "150;11;20;4320;4329" },
+                "loc": "134;7;156;8;3883;4511"
+              }
+            ],
+            "loc": "116;5;157;6;3376;4517"
+          },
+          {
+            "path": {
+              "value": "/widgets/{id}/foo",
+              "loc": "158;5;24;4523;4542"
+            },
+            "methods": [
+              {
+                "name": {
+                  "value": "getWidgetFoo",
+                  "loc": "160;24;38;4584;4598"
+                },
+                "verb": { "value": "get", "loc": "159;7;12;4552;4557" },
+                "parameters": [
+                  {
+                    "name": { "value": "id", "loc": "163;21;25;4656;4660" },
+                    "in": { "value": "path", "loc": "164;19;25;4680;4686" },
+                    "loc": "162;11;168;12;4634;4833"
+                  }
+                ],
+                "successCode": { "value": 200, "loc": "171;11;20;4878;4887" },
+                "loc": "159;7;178;8;4552;5112"
+              },
+              {
+                "name": {
+                  "value": "deleteWidgetFoo",
+                  "loc": "180;24;41;5155;5172"
+                },
+                "verb": { "value": "delete", "loc": "179;7;15;5120;5128" },
+                "parameters": [
+                  {
+                    "name": { "value": "id", "loc": "183;21;25;5230;5234" },
+                    "in": { "value": "path", "loc": "184;19;25;5254;5260" },
+                    "loc": "182;11;188;12;5208;5407"
+                  }
+                ],
+                "successCode": { "value": 204, "loc": "191;11;20;5452;5461" },
+                "loc": "179;7;196;8;5120;5578"
+              }
+            ],
+            "loc": "158;5;197;6;4523;5584"
+          }
+        ]
+      }
+    },
+    {
+      "name": "exhaustive",
+      "methods": [
+        {
+          "name": {
+            "value": "exhaustiveFormats",
+            "loc": "200;24;43;5645;5664"
+          },
+          "security": [
+            [
+              {
+                "type": { "value": "apiKey", "loc": "587;31;39;17215;17223" },
+                "name": {
+                  "value": "apiKeyAuth",
+                  "loc": "587;7;19;17191;17203"
+                },
+                "parameter": {
+                  "value": "x-apikey",
+                  "loc": "587;49;59;17233;17243"
+                },
+                "in": { "value": "header", "loc": "587;67;75;17251;17259" },
+                "loc": "587;7;77;17191;17261"
+              }
+            ]
+          ],
+          "parameters": [
+            {
+              "name": {
+                "value": "string-no-format",
+                "loc": "203;21;39;5722;5740"
+              },
+              "typeName": { "value": "string", "loc": "205;33;41;5801;5809" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "202;11;206;12;5700;5823"
+            },
+            {
+              "name": { "value": "string-date", "loc": "208;21;34;5857;5870" },
+              "typeName": { "value": "date", "loc": "210;23;61;5921;5959" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "207;11;211;12;5835;5971"
+            },
+            {
+              "name": {
+                "value": "string-date-time",
+                "loc": "213;21;39;6005;6023"
+              },
+              "typeName": {
+                "value": "date-time",
+                "loc": "215;23;66;6074;6117"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "212;11;216;12;5983;6129"
+            },
+            {
+              "name": {
+                "value": "integer-no-format",
+                "loc": "218;21;40;6163;6182"
+              },
+              "typeName": { "value": "integer", "loc": "220;33;42;6243;6252" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "217;11;221;12;6141;6266"
+            },
+            {
+              "name": {
+                "value": "integer-int32",
+                "loc": "223;21;36;6300;6315"
+              },
+              "typeName": { "value": "integer", "loc": "225;23;63;6366;6406" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "222;11;226;12;6278;6418"
+            },
+            {
+              "name": {
+                "value": "integer-int64",
+                "loc": "228;21;36;6452;6467"
+              },
+              "typeName": { "value": "long", "loc": "230;23;63;6518;6558" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "227;11;231;12;6430;6570"
+            },
+            {
+              "name": {
+                "value": "number-no-format",
+                "loc": "233;21;39;6604;6622"
+              },
+              "typeName": { "value": "number", "loc": "235;33;41;6683;6691" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "232;11;236;12;6582;6705"
+            },
+            {
+              "name": { "value": "number-float", "loc": "238;21;35;6739;6753" },
+              "typeName": { "value": "float", "loc": "240;23;62;6804;6843" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "237;11;241;12;6717;6855"
+            },
+            {
+              "name": {
+                "value": "number-double",
+                "loc": "243;21;36;6889;6904"
+              },
+              "typeName": { "value": "double", "loc": "245;23;63;6955;6995" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "242;11;246;12;6867;7007"
+            }
+          ],
+          "loc": "199;7;254;8;5613;7212"
+        },
+        {
+          "name": { "value": "exhaustiveParams", "loc": "258;24;42;7449;7467" },
+          "security": [
+            [
+              {
+                "type": { "value": "apiKey", "loc": "587;31;39;17215;17223" },
+                "name": {
+                  "value": "apiKeyAuth",
+                  "loc": "587;7;19;17191;17203"
+                },
+                "parameter": {
+                  "value": "x-apikey",
+                  "loc": "587;49;59;17233;17243"
+                },
+                "in": { "value": "header", "loc": "587;67;75;17251;17259" },
+                "loc": "587;7;77;17191;17261"
+              }
+            ]
+          ],
+          "parameters": [
+            {
+              "name": { "value": "query-string", "loc": "261;21;35;7525;7539" },
+              "typeName": { "value": "string", "loc": "263;33;41;7600;7608" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "260;11;264;12;7503;7622"
+            },
+            {
+              "name": { "value": "query-enum", "loc": "266;21;33;7656;7668" },
+              "typeName": { "value": "exhaustiveParamsQueryEnum" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "265;11;269;12;7634;7784"
+            },
+            {
+              "name": { "value": "query-number", "loc": "271;21;35;7818;7832" },
+              "typeName": { "value": "number", "loc": "273;33;41;7893;7901" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "270;11;274;12;7796;7915"
+            },
+            {
+              "name": {
+                "value": "query-integer",
+                "loc": "276;21;36;7949;7964"
+              },
+              "typeName": { "value": "integer", "loc": "278;33;42;8025;8034" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "275;11;279;12;7927;8048"
+            },
+            {
+              "name": {
+                "value": "query-boolean",
+                "loc": "281;21;36;8082;8097"
+              },
+              "typeName": { "value": "boolean", "loc": "283;33;42;8158;8167" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "280;11;284;12;8060;8181"
+            },
+            {
+              "name": {
+                "value": "query-string-array",
+                "loc": "286;21;41;8215;8235"
+              },
+              "typeName": { "value": "string", "loc": "290;61;69;8383;8391" },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [],
+              "loc": "285;11;291;12;8193;8407"
+            },
+            {
+              "name": {
+                "value": "query-enum-array",
+                "loc": "293;21;39;8441;8459"
+              },
+              "typeName": { "value": "exhaustiveParamsQueryEnumArray" },
+              "isPrimitive": false,
+              "isArray": true,
+              "rules": [
+                {
+                  "id": "string-enum",
+                  "values": [
+                    { "value": "one", "loc": "299;53;58;8654;8659" },
+                    { "value": "two", "loc": "299;60;65;8661;8666" },
+                    { "value": "three", "loc": "299;67;74;8668;8675" }
+                  ],
+                  "loc": "299;44;75;8645;8676"
+                }
+              ],
+              "loc": "292;11;301;12;8419;8704"
+            },
+            {
+              "name": {
+                "value": "query-number-array",
+                "loc": "303;21;41;8738;8758"
+              },
+              "typeName": { "value": "number", "loc": "307;61;69;8906;8914" },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [],
+              "loc": "302;11;308;12;8716;8930"
+            },
+            {
+              "name": {
+                "value": "query-integer-array",
+                "loc": "310;21;42;8964;8985"
+              },
+              "typeName": { "value": "integer", "loc": "314;61;70;9133;9142" },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [],
+              "loc": "309;11;315;12;8942;9158"
+            },
+            {
+              "name": {
+                "value": "query-boolean-array",
+                "loc": "317;21;42;9192;9213"
+              },
+              "typeName": { "value": "boolean", "loc": "321;61;70;9361;9370" },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [],
+              "loc": "316;11;322;12;9170;9386"
+            },
+            {
+              "name": { "value": "path-string", "loc": "324;21;34;9420;9433" },
+              "typeName": { "value": "string", "loc": "327;33;41;9523;9531" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "323;11;328;12;9398;9545"
+            },
+            {
+              "name": { "value": "path-enum", "loc": "330;21;32;9579;9590" },
+              "typeName": { "value": "exhaustiveParamsPathEnum" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "329;11;334;12;9557;9735"
+            },
+            {
+              "name": { "value": "path-number", "loc": "336;21;34;9769;9782" },
+              "typeName": { "value": "number", "loc": "339;33;41;9872;9880" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "335;11;340;12;9747;9894"
+            },
+            {
+              "name": { "value": "path-integer", "loc": "342;21;35;9928;9942" },
+              "typeName": {
+                "value": "integer",
+                "loc": "345;33;42;10032;10041"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "341;11;346;12;9906;10055"
+            },
+            {
+              "name": {
+                "value": "path-boolean",
+                "loc": "348;21;35;10089;10103"
+              },
+              "typeName": {
+                "value": "boolean",
+                "loc": "351;33;42;10193;10202"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "347;11;352;12;10067;10216"
+            },
+            {
+              "name": {
+                "value": "path-string-array",
+                "loc": "354;21;40;10250;10269"
+              },
+              "typeName": { "value": "string", "loc": "359;61;69;10448;10456" },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [{ "id": "required" }],
+              "loc": "353;11;360;12;10228;10472"
+            },
+            {
+              "name": {
+                "value": "path-enum-array",
+                "loc": "362;21;38;10506;10523"
+              },
+              "typeName": { "value": "exhaustiveParamsPathEnumArray" },
+              "isPrimitive": false,
+              "isArray": true,
+              "rules": [
+                { "id": "required" },
+                {
+                  "id": "string-enum",
+                  "values": [
+                    { "value": "one", "loc": "367;53;58;10688;10693" },
+                    { "value": "two", "loc": "367;60;65;10695;10700" },
+                    { "value": "three", "loc": "367;67;74;10702;10709" }
+                  ],
+                  "loc": "367;44;75;10679;10710"
+                }
+              ],
+              "loc": "361;11;369;12;10484;10738"
+            },
+            {
+              "name": {
+                "value": "path-number-array",
+                "loc": "371;21;40;10772;10791"
+              },
+              "typeName": { "value": "number", "loc": "374;61;69;10909;10917" },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [{ "id": "required" }],
+              "loc": "370;11;375;12;10750;10933"
+            },
+            {
+              "name": {
+                "value": "path-integer-array",
+                "loc": "377;21;41;10967;10987"
+              },
+              "typeName": {
+                "value": "integer",
+                "loc": "380;61;70;11105;11114"
+              },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [{ "id": "required" }],
+              "loc": "376;11;381;12;10945;11130"
+            },
+            {
+              "name": {
+                "value": "path-boolean-array",
+                "loc": "383;21;41;11164;11184"
+              },
+              "typeName": {
+                "value": "boolean",
+                "loc": "388;61;70;11363;11372"
+              },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [{ "id": "required" }],
+              "loc": "382;11;389;12;11142;11388"
+            },
+            {
+              "name": {
+                "value": "header-string",
+                "loc": "391;21;36;11422;11437"
+              },
+              "typeName": { "value": "string", "loc": "393;33;41;11499;11507" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "390;11;394;12;11400;11521"
+            },
+            {
+              "name": {
+                "value": "header-enum",
+                "loc": "396;21;34;11555;11568"
+              },
+              "typeName": { "value": "exhaustiveParamsHeaderEnum" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "395;11;399;12;11533;11685"
+            },
+            {
+              "name": {
+                "value": "header-number",
+                "loc": "401;21;36;11719;11734"
+              },
+              "typeName": { "value": "number", "loc": "403;33;41;11796;11804" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "400;11;404;12;11697;11818"
+            },
+            {
+              "name": {
+                "value": "header-integer",
+                "loc": "406;21;37;11852;11868"
+              },
+              "typeName": {
+                "value": "integer",
+                "loc": "408;33;42;11930;11939"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "405;11;409;12;11830;11953"
+            },
+            {
+              "name": {
+                "value": "header-boolean",
+                "loc": "411;21;37;11987;12003"
+              },
+              "typeName": {
+                "value": "boolean",
+                "loc": "413;33;42;12065;12074"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "410;11;414;12;11965;12088"
+            },
+            {
+              "name": {
+                "value": "header-string-array",
+                "loc": "416;21;42;12122;12143"
+              },
+              "typeName": { "value": "string", "loc": "420;61;69;12294;12302" },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [],
+              "loc": "415;11;421;12;12100;12318"
+            },
+            {
+              "name": {
+                "value": "header-enum-array",
+                "loc": "423;21;40;12352;12371"
+              },
+              "typeName": { "value": "exhaustiveParamsHeaderEnumArray" },
+              "isPrimitive": false,
+              "isArray": true,
+              "rules": [
+                {
+                  "id": "string-enum",
+                  "values": [
+                    { "value": "one", "loc": "429;53;58;12569;12574" },
+                    { "value": "two", "loc": "429;60;65;12576;12581" },
+                    { "value": "three", "loc": "429;67;74;12583;12590" }
+                  ],
+                  "loc": "429;44;75;12560;12591"
+                }
+              ],
+              "loc": "422;11;431;12;12330;12619"
+            },
+            {
+              "name": {
+                "value": "header-number-array",
+                "loc": "433;21;42;12653;12674"
+              },
+              "typeName": { "value": "number", "loc": "435;61;69;12764;12772" },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [],
+              "loc": "432;11;436;12;12631;12788"
+            },
+            {
+              "name": {
+                "value": "header-integer-array",
+                "loc": "438;21;43;12822;12844"
+              },
+              "typeName": {
+                "value": "integer",
+                "loc": "440;61;70;12934;12943"
+              },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [],
+              "loc": "437;11;441;12;12800;12959"
+            },
+            {
+              "name": {
+                "value": "header-boolean-array",
+                "loc": "443;21;43;12993;13015"
+              },
+              "typeName": {
+                "value": "boolean",
+                "loc": "445;61;70;13105;13114"
+              },
+              "isPrimitive": true,
+              "isArray": true,
+              "rules": [],
+              "loc": "442;11;446;12;12971;13130"
+            }
+          ],
+          "loc": "257;7;469;8;7417;13717",
+          "meta": [
+            {
+              "key": {
+                "value": "codegen-request-body-name",
+                "loc": "468;9;38;13672;13701"
+              },
+              "value": { "value": "body", "loc": "468;40;46;13703;13709" }
+            }
+          ]
+        }
+      ],
+      "protocols": {
+        "http": [
+          {
+            "path": { "value": "/exhaustive", "loc": "198;5;18;5590;5603" },
+            "methods": [
+              {
+                "name": {
+                  "value": "exhaustiveFormats",
+                  "loc": "200;24;43;5645;5664"
+                },
+                "verb": { "value": "get", "loc": "199;7;12;5613;5618" },
+                "parameters": [
+                  {
+                    "name": {
+                      "value": "string-no-format",
+                      "loc": "203;21;39;5722;5740"
+                    },
+                    "in": { "value": "query", "loc": "204;19;26;5760;5767" },
+                    "loc": "202;11;206;12;5700;5823"
+                  },
+                  {
+                    "name": {
+                      "value": "string-date",
+                      "loc": "208;21;34;5857;5870"
+                    },
+                    "in": { "value": "query", "loc": "209;19;26;5890;5897" },
+                    "loc": "207;11;211;12;5835;5971"
+                  },
+                  {
+                    "name": {
+                      "value": "string-date-time",
+                      "loc": "213;21;39;6005;6023"
+                    },
+                    "in": { "value": "query", "loc": "214;19;26;6043;6050" },
+                    "loc": "212;11;216;12;5983;6129"
+                  },
+                  {
+                    "name": {
+                      "value": "integer-no-format",
+                      "loc": "218;21;40;6163;6182"
+                    },
+                    "in": { "value": "query", "loc": "219;19;26;6202;6209" },
+                    "loc": "217;11;221;12;6141;6266"
+                  },
+                  {
+                    "name": {
+                      "value": "integer-int32",
+                      "loc": "223;21;36;6300;6315"
+                    },
+                    "in": { "value": "query", "loc": "224;19;26;6335;6342" },
+                    "loc": "222;11;226;12;6278;6418"
+                  },
+                  {
+                    "name": {
+                      "value": "integer-int64",
+                      "loc": "228;21;36;6452;6467"
+                    },
+                    "in": { "value": "query", "loc": "229;19;26;6487;6494" },
+                    "loc": "227;11;231;12;6430;6570"
+                  },
+                  {
+                    "name": {
+                      "value": "number-no-format",
+                      "loc": "233;21;39;6604;6622"
+                    },
+                    "in": { "value": "query", "loc": "234;19;26;6642;6649" },
+                    "loc": "232;11;236;12;6582;6705"
+                  },
+                  {
+                    "name": {
+                      "value": "number-float",
+                      "loc": "238;21;35;6739;6753"
+                    },
+                    "in": { "value": "query", "loc": "239;19;26;6773;6780" },
+                    "loc": "237;11;241;12;6717;6855"
+                  },
+                  {
+                    "name": {
+                      "value": "number-double",
+                      "loc": "243;21;36;6889;6904"
+                    },
+                    "in": { "value": "query", "loc": "244;19;26;6924;6931" },
+                    "loc": "242;11;246;12;6867;7007"
+                  }
+                ],
+                "successCode": { "value": 204, "loc": "249;11;20;7052;7061" },
+                "loc": "199;7;254;8;5613;7212"
+              }
+            ],
+            "loc": "198;5;255;6;5590;7218"
+          },
+          {
+            "path": {
+              "value": "/exhaustive/{path-string}/{path-enum}/{path-number}/{path-integer}/{path-boolean}/{path-string-array}/{path-enum-array}/{path-number-array}/{path-integer-array}/{path-boolean-array}",
+              "loc": "256;5;188;7224;7407"
+            },
+            "methods": [
+              {
+                "name": {
+                  "value": "exhaustiveParams",
+                  "loc": "258;24;42;7449;7467"
+                },
+                "verb": { "value": "get", "loc": "257;7;12;7417;7422" },
+                "parameters": [
+                  {
+                    "name": {
+                      "value": "query-string",
+                      "loc": "261;21;35;7525;7539"
+                    },
+                    "in": { "value": "query", "loc": "262;19;26;7559;7566" },
+                    "loc": "260;11;264;12;7503;7622"
+                  },
+                  {
+                    "name": {
+                      "value": "query-enum",
+                      "loc": "266;21;33;7656;7668"
+                    },
+                    "in": { "value": "query", "loc": "267;19;26;7688;7695" },
+                    "loc": "265;11;269;12;7634;7784"
+                  },
+                  {
+                    "name": {
+                      "value": "query-number",
+                      "loc": "271;21;35;7818;7832"
+                    },
+                    "in": { "value": "query", "loc": "272;19;26;7852;7859" },
+                    "loc": "270;11;274;12;7796;7915"
+                  },
+                  {
+                    "name": {
+                      "value": "query-integer",
+                      "loc": "276;21;36;7949;7964"
+                    },
+                    "in": { "value": "query", "loc": "277;19;26;7984;7991" },
+                    "loc": "275;11;279;12;7927;8048"
+                  },
+                  {
+                    "name": {
+                      "value": "query-boolean",
+                      "loc": "281;21;36;8082;8097"
+                    },
+                    "in": { "value": "query", "loc": "282;19;26;8117;8124" },
+                    "loc": "280;11;284;12;8060;8181"
+                  },
+                  {
+                    "name": {
+                      "value": "query-string-array",
+                      "loc": "286;21;41;8215;8235"
+                    },
+                    "in": { "value": "query", "loc": "287;19;26;8255;8262" },
+                    "array": { "value": "csv", "loc": "288;22;28;8285;8291" },
+                    "loc": "285;11;291;12;8193;8407"
+                  },
+                  {
+                    "name": {
+                      "value": "query-enum-array",
+                      "loc": "293;21;39;8441;8459"
+                    },
+                    "in": { "value": "query", "loc": "294;19;26;8479;8486" },
+                    "array": { "value": "csv", "loc": "295;22;28;8509;8515" },
+                    "loc": "292;11;301;12;8419;8704"
+                  },
+                  {
+                    "name": {
+                      "value": "query-number-array",
+                      "loc": "303;21;41;8738;8758"
+                    },
+                    "in": { "value": "query", "loc": "304;19;26;8778;8785" },
+                    "array": { "value": "csv", "loc": "305;22;28;8808;8814" },
+                    "loc": "302;11;308;12;8716;8930"
+                  },
+                  {
+                    "name": {
+                      "value": "query-integer-array",
+                      "loc": "310;21;42;8964;8985"
+                    },
+                    "in": { "value": "query", "loc": "311;19;26;9005;9012" },
+                    "array": { "value": "csv", "loc": "312;22;28;9035;9041" },
+                    "loc": "309;11;315;12;8942;9158"
+                  },
+                  {
+                    "name": {
+                      "value": "query-boolean-array",
+                      "loc": "317;21;42;9192;9213"
+                    },
+                    "in": { "value": "query", "loc": "318;19;26;9233;9240" },
+                    "array": { "value": "csv", "loc": "319;22;28;9263;9269" },
+                    "loc": "316;11;322;12;9170;9386"
+                  },
+                  {
+                    "name": {
+                      "value": "path-string",
+                      "loc": "324;21;34;9420;9433"
+                    },
+                    "in": { "value": "path", "loc": "325;19;25;9453;9459" },
+                    "loc": "323;11;328;12;9398;9545"
+                  },
+                  {
+                    "name": {
+                      "value": "path-enum",
+                      "loc": "330;21;32;9579;9590"
+                    },
+                    "in": { "value": "path", "loc": "331;19;25;9610;9616" },
+                    "loc": "329;11;334;12;9557;9735"
+                  },
+                  {
+                    "name": {
+                      "value": "path-number",
+                      "loc": "336;21;34;9769;9782"
+                    },
+                    "in": { "value": "path", "loc": "337;19;25;9802;9808" },
+                    "loc": "335;11;340;12;9747;9894"
+                  },
+                  {
+                    "name": {
+                      "value": "path-integer",
+                      "loc": "342;21;35;9928;9942"
+                    },
+                    "in": { "value": "path", "loc": "343;19;25;9962;9968" },
+                    "loc": "341;11;346;12;9906;10055"
+                  },
+                  {
+                    "name": {
+                      "value": "path-boolean",
+                      "loc": "348;21;35;10089;10103"
+                    },
+                    "in": { "value": "path", "loc": "349;19;25;10123;10129" },
+                    "loc": "347;11;352;12;10067;10216"
+                  },
+                  {
+                    "name": {
+                      "value": "path-string-array",
+                      "loc": "354;21;40;10250;10269"
+                    },
+                    "in": { "value": "path", "loc": "355;19;25;10289;10295" },
+                    "array": { "value": "csv", "loc": "357;22;30;10348;10356" },
+                    "loc": "353;11;360;12;10228;10472"
+                  },
+                  {
+                    "name": {
+                      "value": "path-enum-array",
+                      "loc": "362;21;38;10506;10523"
+                    },
+                    "in": { "value": "path", "loc": "363;19;25;10543;10549" },
+                    "array": { "value": "csv" },
+                    "loc": "361;11;369;12;10484;10738"
+                  },
+                  {
+                    "name": {
+                      "value": "path-number-array",
+                      "loc": "371;21;40;10772;10791"
+                    },
+                    "in": { "value": "path", "loc": "372;19;25;10811;10817" },
+                    "array": { "value": "csv" },
+                    "loc": "370;11;375;12;10750;10933"
+                  },
+                  {
+                    "name": {
+                      "value": "path-integer-array",
+                      "loc": "377;21;41;10967;10987"
+                    },
+                    "in": { "value": "path", "loc": "378;19;25;11007;11013" },
+                    "array": { "value": "csv" },
+                    "loc": "376;11;381;12;10945;11130"
+                  },
+                  {
+                    "name": {
+                      "value": "path-boolean-array",
+                      "loc": "383;21;41;11164;11184"
+                    },
+                    "in": { "value": "path", "loc": "384;19;25;11204;11210" },
+                    "array": { "value": "csv", "loc": "386;22;30;11263;11271" },
+                    "loc": "382;11;389;12;11142;11388"
+                  },
+                  {
+                    "name": {
+                      "value": "header-string",
+                      "loc": "391;21;36;11422;11437"
+                    },
+                    "in": { "value": "header", "loc": "392;19;27;11457;11465" },
+                    "loc": "390;11;394;12;11400;11521"
+                  },
+                  {
+                    "name": {
+                      "value": "header-enum",
+                      "loc": "396;21;34;11555;11568"
+                    },
+                    "in": { "value": "header", "loc": "397;19;27;11588;11596" },
+                    "loc": "395;11;399;12;11533;11685"
+                  },
+                  {
+                    "name": {
+                      "value": "header-number",
+                      "loc": "401;21;36;11719;11734"
+                    },
+                    "in": { "value": "header", "loc": "402;19;27;11754;11762" },
+                    "loc": "400;11;404;12;11697;11818"
+                  },
+                  {
+                    "name": {
+                      "value": "header-integer",
+                      "loc": "406;21;37;11852;11868"
+                    },
+                    "in": { "value": "header", "loc": "407;19;27;11888;11896" },
+                    "loc": "405;11;409;12;11830;11953"
+                  },
+                  {
+                    "name": {
+                      "value": "header-boolean",
+                      "loc": "411;21;37;11987;12003"
+                    },
+                    "in": { "value": "header", "loc": "412;19;27;12023;12031" },
+                    "loc": "410;11;414;12;11965;12088"
+                  },
+                  {
+                    "name": {
+                      "value": "header-string-array",
+                      "loc": "416;21;42;12122;12143"
+                    },
+                    "in": { "value": "header", "loc": "417;19;27;12163;12171" },
+                    "array": { "value": "csv", "loc": "418;22;30;12194;12202" },
+                    "loc": "415;11;421;12;12100;12318"
+                  },
+                  {
+                    "name": {
+                      "value": "header-enum-array",
+                      "loc": "423;21;40;12352;12371"
+                    },
+                    "in": { "value": "header", "loc": "424;19;27;12391;12399" },
+                    "array": { "value": "csv", "loc": "425;22;30;12422;12430" },
+                    "loc": "422;11;431;12;12330;12619"
+                  },
+                  {
+                    "name": {
+                      "value": "header-number-array",
+                      "loc": "433;21;42;12653;12674"
+                    },
+                    "in": { "value": "header", "loc": "434;19;27;12694;12702" },
+                    "array": { "value": "csv" },
+                    "loc": "432;11;436;12;12631;12788"
+                  },
+                  {
+                    "name": {
+                      "value": "header-integer-array",
+                      "loc": "438;21;43;12822;12844"
+                    },
+                    "in": { "value": "header", "loc": "439;19;27;12864;12872" },
+                    "array": { "value": "csv" },
+                    "loc": "437;11;441;12;12800;12959"
+                  },
+                  {
+                    "name": {
+                      "value": "header-boolean-array",
+                      "loc": "443;21;43;12993;13015"
+                    },
+                    "in": { "value": "header", "loc": "444;19;27;13035;13043" },
+                    "array": { "value": "csv" },
+                    "loc": "442;11;446;12;12971;13130"
+                  }
+                ],
+                "successCode": { "value": 204, "loc": "463;11;20;13529;13538" },
+                "loc": "257;7;469;8;7417;13717"
+              }
+            ],
+            "loc": "256;5;470;6;7224;13723"
+          }
+        ]
+      }
+    },
+    {
+      "name": "authPermutation",
+      "methods": [
+        {
+          "name": {
+            "value": "all-auth-schemes",
+            "loc": "473;24;42;13790;13808"
+          },
+          "security": [
+            [
+              {
+                "type": { "value": "basic", "loc": "585;30;36;17087;17093" },
+                "name": { "value": "basicAuth", "loc": "585;7;18;17064;17075" },
+                "loc": "585;7;57;17064;17114"
+              }
+            ],
+            [
+              {
+                "type": { "value": "basic", "loc": "586;41;47;17156;17162" },
+                "name": {
+                  "value": "alternate-basic-auth",
+                  "loc": "586;7;29;17122;17144"
+                },
+                "loc": "586;7;68;17122;17183"
+              }
+            ],
+            [
+              {
+                "type": { "value": "apiKey", "loc": "587;31;39;17215;17223" },
+                "name": {
+                  "value": "apiKeyAuth",
+                  "loc": "587;7;19;17191;17203"
+                },
+                "parameter": {
+                  "value": "x-apikey",
+                  "loc": "587;49;59;17233;17243"
+                },
+                "in": { "value": "header", "loc": "587;67;75;17251;17259" },
+                "loc": "587;7;77;17191;17261"
+              }
+            ],
+            [
+              {
+                "type": { "value": "oauth2", "loc": "594;17;25;17415;17423" },
+                "name": {
+                  "value": "oauth2Auth",
+                  "loc": "593;7;19;17383;17395"
+                },
+                "flows": [
+                  {
+                    "type": {
+                      "value": "implicit",
+                      "loc": "596;11;21;17454;17464"
+                    },
+                    "authorizationUrl": {
+                      "value": "https://example.com/auth",
+                      "loc": "597;33;59;17500;17526"
+                    },
+                    "scopes": [
+                      {
+                        "name": {
+                          "value": "read:gizmos",
+                          "loc": "599;15;28;17566;17579"
+                        },
+                        "description": {
+                          "value": "Access gizmo data",
+                          "loc": "599;30;49;17581;17600"
+                        },
+                        "loc": "599;15;49;17566;17600"
+                      },
+                      {
+                        "name": {
+                          "value": "write:gizmos",
+                          "loc": "600;15;29;17616;17630"
+                        },
+                        "description": {
+                          "value": "Write gizmo data",
+                          "loc": "600;31;49;17632;17650"
+                        },
+                        "loc": "600;15;49;17616;17650"
+                      },
+                      {
+                        "name": {
+                          "value": "admin:gizmos",
+                          "loc": "601;15;29;17666;17680"
+                        },
+                        "description": {
+                          "value": "Manage gizmos",
+                          "loc": "601;31;46;17682;17697"
+                        },
+                        "loc": "601;15;46;17666;17697"
+                      }
+                    ],
+                    "loc": "593;7;605;8;17383;17741"
+                  }
+                ],
+                "loc": "593;7;605;8;17383;17741"
+              }
+            ]
+          ],
+          "parameters": [],
+          "loc": "472;7;481;8;13758;14076"
+        },
+        {
+          "name": {
+            "value": "combo-auth-schemes",
+            "loc": "483;24;44;14116;14136"
+          },
+          "security": [
+            [
+              {
+                "type": { "value": "basic", "loc": "585;30;36;17087;17093" },
+                "name": { "value": "basicAuth", "loc": "585;7;18;17064;17075" },
+                "loc": "585;7;57;17064;17114"
+              },
+              {
+                "type": { "value": "apiKey", "loc": "587;31;39;17215;17223" },
+                "name": {
+                  "value": "apiKeyAuth",
+                  "loc": "587;7;19;17191;17203"
+                },
+                "parameter": {
+                  "value": "x-apikey",
+                  "loc": "587;49;59;17233;17243"
+                },
+                "in": { "value": "header", "loc": "587;67;75;17251;17259" },
+                "loc": "587;7;77;17191;17261"
+              }
+            ],
+            [
+              {
+                "type": { "value": "basic", "loc": "585;30;36;17087;17093" },
+                "name": { "value": "basicAuth", "loc": "585;7;18;17064;17075" },
+                "loc": "585;7;57;17064;17114"
+              },
+              {
+                "type": { "value": "apiKey", "loc": "589;17;25;17310;17318" },
+                "name": {
+                  "value": "alternateApiKeyAuth",
+                  "loc": "588;7;28;17269;17290"
+                },
+                "parameter": {
+                  "value": "apikey",
+                  "loc": "590;17;25;17336;17344"
+                },
+                "in": { "value": "query", "loc": "591;15;22;17360;17367" },
+                "loc": "588;7;592;8;17269;17375"
+              }
+            ],
+            [
+              {
+                "type": { "value": "basic", "loc": "586;41;47;17156;17162" },
+                "name": {
+                  "value": "alternate-basic-auth",
+                  "loc": "586;7;29;17122;17144"
+                },
+                "loc": "586;7;68;17122;17183"
+              },
+              {
+                "type": { "value": "oauth2", "loc": "594;17;25;17415;17423" },
+                "name": {
+                  "value": "oauth2Auth",
+                  "loc": "593;7;19;17383;17395"
+                },
+                "flows": [
+                  {
+                    "type": {
+                      "value": "implicit",
+                      "loc": "596;11;21;17454;17464"
+                    },
+                    "authorizationUrl": {
+                      "value": "https://example.com/auth",
+                      "loc": "597;33;59;17500;17526"
+                    },
+                    "scopes": [
+                      {
+                        "name": {
+                          "value": "read:gizmos",
+                          "loc": "599;15;28;17566;17579"
+                        },
+                        "description": {
+                          "value": "Access gizmo data",
+                          "loc": "599;30;49;17581;17600"
+                        },
+                        "loc": "599;15;49;17566;17600"
+                      },
+                      {
+                        "name": {
+                          "value": "write:gizmos",
+                          "loc": "600;15;29;17616;17630"
+                        },
+                        "description": {
+                          "value": "Write gizmo data",
+                          "loc": "600;31;49;17632;17650"
+                        },
+                        "loc": "600;15;49;17616;17650"
+                      },
+                      {
+                        "name": {
+                          "value": "admin:gizmos",
+                          "loc": "601;15;29;17666;17680"
+                        },
+                        "description": {
+                          "value": "Manage gizmos",
+                          "loc": "601;31;46;17682;17697"
+                        },
+                        "loc": "601;15;46;17666;17697"
+                      }
+                    ],
+                    "loc": "593;7;605;8;17383;17741"
+                  }
+                ],
+                "loc": "593;7;605;8;17383;17741"
+              }
+            ]
+          ],
+          "parameters": [],
+          "loc": "482;7;490;8;14084;14434"
+        }
+      ],
+      "protocols": {
+        "http": [
+          {
+            "path": {
+              "value": "/authPermutations",
+              "loc": "471;5;24;13729;13748"
+            },
+            "methods": [
+              {
+                "name": {
+                  "value": "all-auth-schemes",
+                  "loc": "473;24;42;13790;13808"
+                },
+                "verb": { "value": "get", "loc": "472;7;12;13758;13763" },
+                "parameters": [],
+                "successCode": { "value": 200, "loc": "474;24;29;13833;13838" },
+                "loc": "472;7;481;8;13758;14076"
+              },
+              {
+                "name": {
+                  "value": "combo-auth-schemes",
+                  "loc": "483;24;44;14116;14136"
+                },
+                "verb": { "value": "put", "loc": "482;7;12;14084;14089" },
+                "parameters": [],
+                "successCode": { "value": 200, "loc": "484;24;29;14161;14166" },
+                "loc": "482;7;490;8;14084;14434"
+              }
+            ],
+            "loc": "471;5;491;6;13729;14440"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": { "value": "gizmo", "loc": "495;7;14;14487;14494" },
+      "properties": [
+        {
+          "name": { "value": "id", "loc": "498;11;15;14558;14562" },
+          "typeName": { "value": "string", "loc": "536;40;48;15799;15807" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "536;13;50;15772;15809"
+        },
+        {
+          "name": { "value": "name", "loc": "499;11;17;14613;14619" },
+          "typeName": { "value": "string", "loc": "499;29;37;14631;14639" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "499;19;39;14621;14641"
+        },
+        {
+          "name": { "value": "size", "loc": "500;11;17;14653;14659" },
+          "typeName": {
+            "value": "chemas/productSize",
+            "loc": "503;7;20;14733;14746"
+          },
+          "isPrimitive": false,
+          "isArray": false,
+          "rules": [],
+          "loc": "503;22;80;14748;14806"
+        }
+      ],
+      "rules": [],
+      "loc": "495;7;502;8;14487;14725"
+    },
+    {
+      "name": { "value": "widget", "loc": "504;7;15;14814;14822" },
+      "properties": [
+        {
+          "name": { "value": "name", "loc": "517;11;17;15158;15164" },
+          "typeName": { "value": "string", "loc": "520;21;29;15256;15264" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "517;19;521;12;15166;15276"
+        },
+        {
+          "name": { "value": "fiz", "loc": "522;11;16;15288;15293" },
+          "typeName": { "value": "number", "loc": "522;45;53;15322;15330" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "522;18;55;15295;15332"
+        },
+        {
+          "name": { "value": "buzz", "loc": "523;11;17;15344;15350" },
+          "typeName": { "value": "number", "loc": "523;46;54;15379;15387" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "523;19;56;15352;15389"
+        },
+        {
+          "name": { "value": "fizbuzz", "loc": "524;11;20;15401;15410" },
+          "typeName": { "value": "number", "loc": "524;50;58;15440;15448" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "524;22;60;15412;15450"
+        },
+        {
+          "name": { "value": "foo", "loc": "525;11;16;15462;15467" },
+          "typeName": { "value": "widgetFoo" },
+          "isPrimitive": false,
+          "isArray": false,
+          "rules": [],
+          "loc": "525;18;532;12;15469;15674"
+        },
+        {
+          "name": { "value": "size", "loc": "533;11;17;15686;15692" },
+          "typeName": {
+            "value": "chemas/productSize",
+            "loc": "503;7;20;14733;14746"
+          },
+          "isPrimitive": false,
+          "isArray": false,
+          "rules": [],
+          "loc": "503;22;80;14748;14806"
+        }
+      ],
+      "rules": [],
+      "loc": "504;7;512;8;14814;15046"
+    },
+    {
+      "name": { "value": "newWidget", "loc": "513;7;18;15054;15065" },
+      "properties": [
+        {
+          "name": { "value": "name", "loc": "517;11;17;15158;15164" },
+          "typeName": { "value": "string", "loc": "520;21;29;15256;15264" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "517;19;521;12;15166;15276"
+        },
+        {
+          "name": { "value": "fiz", "loc": "522;11;16;15288;15293" },
+          "typeName": { "value": "number", "loc": "522;45;53;15322;15330" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "522;18;55;15295;15332"
+        },
+        {
+          "name": { "value": "buzz", "loc": "523;11;17;15344;15350" },
+          "typeName": { "value": "number", "loc": "523;46;54;15379;15387" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "523;19;56;15352;15389"
+        },
+        {
+          "name": { "value": "fizbuzz", "loc": "524;11;20;15401;15410" },
+          "typeName": { "value": "number", "loc": "524;50;58;15440;15448" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "524;22;60;15412;15450"
+        },
+        {
+          "name": { "value": "foo", "loc": "525;11;16;15462;15467" },
+          "typeName": { "value": "newWidgetFoo" },
+          "isPrimitive": false,
+          "isArray": false,
+          "rules": [],
+          "loc": "525;18;532;12;15469;15674"
+        },
+        {
+          "name": { "value": "size", "loc": "533;11;17;15686;15692" },
+          "typeName": {
+            "value": "chemas/productSize",
+            "loc": "503;7;20;14733;14746"
+          },
+          "isPrimitive": false,
+          "isArray": false,
+          "rules": [],
+          "loc": "503;22;80;14748;14806"
+        }
+      ],
+      "rules": [],
+      "loc": "513;7;535;8;15054;15758"
+    },
+    {
+      "name": { "value": "getGizmosResponse" },
+      "properties": [
+        {
+          "name": { "value": "data", "loc": "51;21;27;1507;1513" },
+          "typeName": { "value": "gizmo", "loc": "495;7;14;14487;14494" },
+          "isPrimitive": false,
+          "isArray": true,
+          "rules": [{ "id": "required" }],
+          "loc": "51;29;54;22;1515;1649"
+        }
+      ],
+      "rules": [],
+      "loc": "47;27;56;18;1375;1687"
+    },
+    {
+      "name": { "value": "widgetFoo" },
+      "properties": [
+        {
+          "name": { "value": "fiz", "loc": "529;15;20;15577;15582" },
+          "typeName": { "value": "number", "loc": "529;32;40;15594;15602" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "529;22;42;15584;15604"
+        },
+        {
+          "name": { "value": "buzz", "loc": "530;15;21;15620;15626" },
+          "typeName": { "value": "number", "loc": "530;33;41;15638;15646" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "530;23;43;15628;15648"
+        }
+      ],
+      "rules": [],
+      "loc": "525;18;532;12;15469;15674"
+    },
+    {
+      "name": { "value": "newWidgetFoo" },
+      "properties": [
+        {
+          "name": { "value": "fiz", "loc": "529;15;20;15577;15582" },
+          "typeName": { "value": "number", "loc": "529;32;40;15594;15602" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "529;22;42;15584;15604"
+        },
+        {
+          "name": { "value": "buzz", "loc": "530;15;21;15620;15626" },
+          "typeName": { "value": "number", "loc": "530;33;41;15638;15646" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "530;23;43;15628;15648"
+        }
+      ],
+      "rules": [],
+      "loc": "525;18;532;12;15469;15674"
+    }
+  ],
+  "enums": [
+    {
+      "name": { "value": "createGizmoSize" },
+      "values": [
+        { "value": "small", "loc": "101;24;31;2999;3006" },
+        { "value": "medium", "loc": "101;33;41;3008;3016" },
+        { "value": "big", "loc": "101;43;48;3018;3023" },
+        { "value": "XL", "loc": "101;50;54;3025;3029" }
+      ],
+      "loc": "101;15;55;2990;3030"
+    },
+    {
+      "name": { "value": "exhaustiveParamsQueryEnum" },
+      "values": [
+        { "value": "one", "loc": "268;52;57;7748;7753" },
+        { "value": "two", "loc": "268;59;64;7755;7760" },
+        { "value": "three", "loc": "268;66;73;7762;7769" }
+      ],
+      "loc": "268;43;74;7739;7770"
+    },
+    {
+      "name": { "value": "exhaustiveParamsQueryEnumArray" },
+      "values": [
+        { "value": "one", "loc": "299;53;58;8654;8659" },
+        { "value": "two", "loc": "299;60;65;8661;8666" },
+        { "value": "three", "loc": "299;67;74;8668;8675" }
+      ],
+      "loc": "299;44;75;8645;8676"
+    },
+    {
+      "name": { "value": "exhaustiveParamsPathEnum" },
+      "values": [
+        { "value": "one", "loc": "333;52;57;9699;9704" },
+        { "value": "two", "loc": "333;59;64;9706;9711" },
+        { "value": "three", "loc": "333;66;73;9713;9720" }
+      ],
+      "loc": "333;43;74;9690;9721"
+    },
+    {
+      "name": { "value": "exhaustiveParamsPathEnumArray" },
+      "values": [
+        { "value": "one", "loc": "367;53;58;10688;10693" },
+        { "value": "two", "loc": "367;60;65;10695;10700" },
+        { "value": "three", "loc": "367;67;74;10702;10709" }
+      ],
+      "loc": "367;44;75;10679;10710"
+    },
+    {
+      "name": { "value": "exhaustiveParamsHeaderEnum" },
+      "values": [
+        { "value": "one", "loc": "398;52;57;11649;11654" },
+        { "value": "two", "loc": "398;59;64;11656;11661" },
+        { "value": "three", "loc": "398;66;73;11663;11670" }
+      ],
+      "loc": "398;43;74;11640;11671"
+    },
+    {
+      "name": { "value": "exhaustiveParamsHeaderEnumArray" },
+      "values": [
+        { "value": "one", "loc": "429;53;58;12569;12574" },
+        { "value": "two", "loc": "429;60;65;12576;12581" },
+        { "value": "three", "loc": "429;67;74;12583;12590" }
+      ],
+      "loc": "429;44;75;12560;12591"
+    },
+    {
+      "name": { "value": "chemas/productSize", "loc": "503;7;20;14733;14746" },
+      "values": [
+        { "value": "small", "loc": "503;51;58;14777;14784" },
+        { "value": "medium", "loc": "503;60;68;14786;14794" },
+        { "value": "large", "loc": "503;70;77;14796;14803" }
+      ],
+      "loc": "503;42;78;14768;14804"
+    }
+  ],
+  "unions": [],
+  "loc": "1;1;614;2;0;17922",
+  "meta": [
+    {
+      "key": { "value": "metaString", "loc": "608;3;17;17755;17769" },
+      "value": { "value": "bar", "loc": "608;19;24;17771;17776" }
+    },
+    {
+      "key": { "value": "metaNumber", "loc": "609;3;17;17780;17794" },
+      "value": { "value": 1234, "loc": "609;19;23;17796;17800" }
+    },
+    {
+      "key": { "value": "metaBoolean", "loc": "610;3;18;17804;17819" },
+      "value": { "value": true, "loc": "610;20;24;17821;17825" }
+    },
+    {
+      "key": { "value": "metaNull", "loc": "611;3;15;17829;17841" },
+      "value": { "value": null, "loc": "611;17;21;17843;17847" }
+    },
+    {
+      "key": { "value": "metaObject", "loc": "612;3;17;17851;17865" },
+      "value": { "value": { "foo": "bar" }, "loc": "612;19;35;17867;17883" }
+    },
+    {
+      "key": { "value": "metaArray", "loc": "613;3;16;17887;17900" },
+      "value": { "value": [{ "foo": "bar" }], "loc": "613;18;36;17902;17920" }
+    }
+  ]
+}

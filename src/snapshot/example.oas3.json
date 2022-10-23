@@ -1,0 +1,614 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Basketry Example",
+    "description": "Example schema to exercise all parser functionality",
+    "version": "1.2.3-rc4",
+    "x-metaString": "bar",
+    "x-metaNumber": 1234,
+    "x-metaBoolean": true,
+    "x-metaNull": null,
+    "x-metaObject": { "foo": "bar" },
+    "x-metaArray": [{ "foo": "bar" }]
+  },
+  "servers": [{ "url": "/" }],
+  "security": [{ "apiKeyAuth": [] }],
+  "paths": {
+    "/gizmos": {
+      "get": {
+        "summary": "Only has a summary",
+        "operationId": "getGizmos",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "x-metaString": "bar",
+              "x-metaNumber": 1234,
+              "x-metaBoolean": true,
+              "x-metaNull": null,
+              "x-metaObject": { "foo": "bar" },
+              "x-metaArray": [{ "foo": "bar" }]
+            },
+            "x-metaString": "bar",
+            "x-metaNumber": 1234,
+            "x-metaBoolean": true,
+            "x-metaNull": null,
+            "x-metaObject": { "foo": "bar" },
+            "x-metaArray": [{ "foo": "bar" }]
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "A collection of gizmos",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "required": ["data"],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/gizmo" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [{ "oauth2Auth": ["read:gizmos"] }]
+      },
+      "put": {
+        "operationId": "updateGizmo",
+        "parameters": [
+          {
+            "name": "factors",
+            "in": "query",
+            "description": "array of primitive",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "maxItems": 6,
+              "minItems": 2,
+              "type": "array",
+              "items": { "pattern": "[0-9a-fA-F]+", "type": "string" }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "A single of gizmo",
+            "content": {
+              "*/*": { "schema": { "$ref": "#/components/schemas/gizmo" } }
+            }
+          }
+        },
+        "security": [{ "oauth2Auth": ["write:gizmos", "admin:gizmos"] }]
+      },
+      "post": {
+        "summary": "Has a summary in addition to a description",
+        "description": "Has a description in addition to a summary",
+        "operationId": "createGizmo",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Anonymous enum",
+            "schema": {
+              "type": "string",
+              "enum": ["small", "medium", "big", "XL"]
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "A single of gizmo",
+            "content": {
+              "*/*": { "schema": { "$ref": "#/components/schemas/gizmo" } }
+            }
+          }
+        },
+        "security": [{ "oauth2Auth": ["write:gizmos"] }]
+      }
+    },
+    "/widgets": {
+      "get": {
+        "operationId": "getWidgets",
+        "responses": {
+          "default": {
+            "description": "Response a defined object schema by reference",
+            "content": {
+              "*/*": { "schema": { "$ref": "#/components/schemas/widget" } }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "putWidget",
+        "responses": {
+          "400": { "description": "Error response only", "content": {} }
+        }
+      },
+      "post": {
+        "operationId": "createWidget",
+        "requestBody": {
+          "description": "The new widget",
+          "content": {
+            "*/*": {
+              "schema": {
+                "required": ["name"],
+                "type": "object",
+                "properties": { "name": { "type": "string" } }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "default": {
+            "description": "Response a defined object schema by reference",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/widgets/{id}/foo": {
+      "get": {
+        "operationId": "getWidgetFoo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The widget ID",
+            "required": true,
+            "schema": { "maxLength": 30, "type": "string" }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Response a defined object schema by reference",
+            "content": {
+              "*/*": { "schema": { "$ref": "#/components/schemas/widget" } }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteWidgetFoo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The widget ID",
+            "required": true,
+            "schema": { "maxLength": 30, "type": "string" }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Response without any schema",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/exhaustive": {
+      "get": {
+        "operationId": "exhaustiveFormats",
+        "parameters": [
+          {
+            "name": "string-no-format",
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "string-date",
+            "in": "query",
+            "schema": { "type": "string", "format": "date" }
+          },
+          {
+            "name": "string-date-time",
+            "in": "query",
+            "schema": { "type": "string", "format": "date-time" }
+          },
+          {
+            "name": "integer-no-format",
+            "in": "query",
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "integer-int32",
+            "in": "query",
+            "schema": { "type": "integer", "format": "int32" }
+          },
+          {
+            "name": "integer-int64",
+            "in": "query",
+            "schema": { "type": "integer", "format": "int64" }
+          },
+          {
+            "name": "number-no-format",
+            "in": "query",
+            "schema": { "type": "number" }
+          },
+          {
+            "name": "number-float",
+            "in": "query",
+            "schema": { "type": "number", "format": "float" }
+          },
+          {
+            "name": "number-double",
+            "in": "query",
+            "schema": { "type": "number", "format": "double" }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "operation with an exhaustive set of string and number formats",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/exhaustive/{path-string}/{path-enum}/{path-number}/{path-integer}/{path-boolean}/{path-string-array}/{path-enum-array}/{path-number-array}/{path-integer-array}/{path-boolean-array}": {
+      "get": {
+        "operationId": "exhaustiveParams",
+        "parameters": [
+          {
+            "name": "query-string",
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "query-enum",
+            "in": "query",
+            "schema": { "type": "string", "enum": ["one", "two", "three"] }
+          },
+          {
+            "name": "query-number",
+            "in": "query",
+            "schema": { "type": "number" }
+          },
+          {
+            "name": "query-integer",
+            "in": "query",
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "query-boolean",
+            "in": "query",
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "query-string-array",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          },
+          {
+            "name": "query-enum-array",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": { "type": "string", "enum": ["one", "two", "three"] }
+            }
+          },
+          {
+            "name": "query-number-array",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": { "type": "array", "items": { "type": "number" } }
+          },
+          {
+            "name": "query-integer-array",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": { "type": "array", "items": { "type": "integer" } }
+          },
+          {
+            "name": "query-boolean-array",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": { "type": "array", "items": { "type": "boolean" } }
+          },
+          {
+            "name": "path-string",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "path-enum",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "enum": ["one", "two", "three"] }
+          },
+          {
+            "name": "path-number",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "number" }
+          },
+          {
+            "name": "path-integer",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "path-boolean",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "path-string-array",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          },
+          {
+            "name": "path-enum-array",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": { "type": "string", "enum": ["one", "two", "three"] }
+            }
+          },
+          {
+            "name": "path-number-array",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "array", "items": { "type": "number" } }
+          },
+          {
+            "name": "path-integer-array",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "array", "items": { "type": "integer" } }
+          },
+          {
+            "name": "path-boolean-array",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": { "type": "array", "items": { "type": "boolean" } }
+          },
+          {
+            "name": "header-string",
+            "in": "header",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "header-enum",
+            "in": "header",
+            "schema": { "type": "string", "enum": ["one", "two", "three"] }
+          },
+          {
+            "name": "header-number",
+            "in": "header",
+            "schema": { "type": "number" }
+          },
+          {
+            "name": "header-integer",
+            "in": "header",
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "header-boolean",
+            "in": "header",
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "header-string-array",
+            "in": "header",
+            "style": "simple",
+            "explode": false,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          },
+          {
+            "name": "header-enum-array",
+            "in": "header",
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": { "type": "string", "enum": ["one", "two", "three"] }
+            }
+          },
+          {
+            "name": "header-number-array",
+            "in": "header",
+            "schema": { "type": "array", "items": { "type": "number" } }
+          },
+          {
+            "name": "header-integer-array",
+            "in": "header",
+            "schema": { "type": "array", "items": { "type": "integer" } }
+          },
+          {
+            "name": "header-boolean-array",
+            "in": "header",
+            "schema": { "type": "array", "items": { "type": "boolean" } }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "foo": { "type": "string" },
+                  "bar": { "type": "string" }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "default": {
+            "description": "operation with an exhaustive set of params",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/authPermutations": {
+      "get": {
+        "operationId": "all-auth-schemes",
+        "responses": { "200": { "description": "Success", "content": {} } },
+        "security": [
+          { "basicAuth": [] },
+          { "alternate-basic-auth": [] },
+          { "apiKeyAuth": [] },
+          { "oauth2Auth": ["admin:gizmos"] }
+        ]
+      },
+      "put": {
+        "operationId": "combo-auth-schemes",
+        "responses": { "200": { "description": "Success", "content": {} } },
+        "security": [
+          { "basicAuth": [], "apiKeyAuth": [] },
+          { "basicAuth": [], "alternateApiKeyAuth": [] },
+          { "alternate-basic-auth": [], "oauth2Auth": ["admin:gizmos"] }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "gizmo": {
+        "type": "object",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/id" },
+          "name": { "type": "string" },
+          "size": { "$ref": "#/components/schemas/productSize" }
+        }
+      },
+      "productSize": { "type": "string", "enum": ["small", "medium", "large"] },
+      "widget": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": { "id": { "$ref": "#/components/schemas/id" } }
+          },
+          { "$ref": "#/components/schemas/newWidget" }
+        ]
+      },
+      "newWidget": {
+        "required": ["fiz"],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 30,
+            "pattern": "[0-9a-fA-F]+",
+            "type": "string"
+          },
+          "fiz": { "multipleOf": 3, "type": "number" },
+          "buzz": { "multipleOf": 5, "type": "number" },
+          "fizbuzz": { "multipleOf": 15, "type": "number" },
+          "foo": {
+            "required": ["buzz"],
+            "type": "object",
+            "properties": {
+              "fiz": { "type": "number" },
+              "buzz": { "type": "number" }
+            }
+          },
+          "size": { "$ref": "#/components/schemas/productSize" }
+        }
+      },
+      "id": { "maxLength": 30, "type": "string" }
+    },
+    "responses": {
+      "gizmo": {
+        "description": "A single of gizmo",
+        "content": {
+          "*/*": { "schema": { "$ref": "#/components/schemas/gizmo" } }
+        }
+      },
+      "gizmos": {
+        "description": "A collection of gizmos",
+        "content": {
+          "*/*": {
+            "schema": {
+              "required": ["data"],
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/gizmo" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "search": {
+        "name": "search",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "x-metaString": "bar",
+          "x-metaNumber": 1234,
+          "x-metaBoolean": true,
+          "x-metaNull": null,
+          "x-metaObject": { "foo": "bar" },
+          "x-metaArray": [{ "foo": "bar" }]
+        },
+        "x-metaString": "bar",
+        "x-metaNumber": 1234,
+        "x-metaBoolean": true,
+        "x-metaNull": null,
+        "x-metaObject": { "foo": "bar" },
+        "x-metaArray": [{ "foo": "bar" }]
+      }
+    },
+    "securitySchemes": {
+      "basicAuth": { "type": "http", "scheme": "basic" },
+      "alternate-basic-auth": { "type": "http", "scheme": "basic" },
+      "apiKeyAuth": { "type": "apiKey", "name": "x-apikey", "in": "header" },
+      "alternateApiKeyAuth": {
+        "type": "apiKey",
+        "name": "apikey",
+        "in": "query"
+      },
+      "oauth2Auth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://example.com/auth",
+            "scopes": {
+              "read:gizmos": "Access gizmo data",
+              "write:gizmos": "Write gizmo data",
+              "admin:gizmos": "Manage gizmos"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-metaString": "bar",
+  "x-metaNumber": 1234,
+  "x-metaBoolean": true,
+  "x-metaNull": null,
+  "x-metaObject": { "foo": "bar" },
+  "x-metaArray": [{ "foo": "bar" }]
+}
