@@ -1179,16 +1179,19 @@ export class OAS3Parser {
     def: OAS3.SchemaNodeUnion | OAS3.ParameterNode,
     required?: boolean,
   ): ValidationRule[] {
-    const arraySchema = this.parseArraySchema(def);
-    if (!arraySchema) return [];
+    const schema = this.parseSchema(def);
+    if (!schema) {
+      return required ? [{ id: 'required' }] : [];
+    }
 
     const localRules = this.ruleFactories
-      .map((f) => f(arraySchema))
+      .map((f) => f(schema))
       .filter((x): x is ValidationRule => !!x);
 
-    if (!arraySchema?.items) return [];
+    if (schema.nodeType !== 'ArraySchema' || !schema.items)
+      return required ? [{ id: 'required' }, ...localRules] : localRules;
 
-    const itemsSchema = OAS3.resolveSchema(this.schema.node, arraySchema.items);
+    const itemsSchema = OAS3.resolveSchema(this.schema.node, schema.items);
     if (!itemsSchema) return [];
 
     const itemRules = this.ruleFactories
@@ -1221,6 +1224,16 @@ export class OAS3Parser {
     }
 
     return undefined;
+  }
+
+  private parseSchema(
+    node: OAS3.SchemaNodeUnion | OAS3.ParameterNode | undefined,
+  ): OAS3.SchemaNodeUnion | undefined {
+    if (!node) return undefined;
+    if (node.nodeType !== 'Parameter') return node;
+    if (!node.schema) return undefined;
+
+    return OAS3.resolveSchema(this.schema.node, node.schema);
   }
 }
 

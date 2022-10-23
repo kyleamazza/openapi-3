@@ -303,7 +303,18 @@
               "typeName": { "value": "createGizmoSize" },
               "isPrimitive": false,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                {
+                  "id": "string-enum",
+                  "values": [
+                    { "value": "small", "loc": "101;24;31;2999;3006" },
+                    { "value": "medium", "loc": "101;33;41;3008;3016" },
+                    { "value": "big", "loc": "101;43;48;3018;3023" },
+                    { "value": "XL", "loc": "101;50;54;3025;3029" }
+                  ],
+                  "loc": "101;15;55;2990;3030"
+                }
+              ],
               "loc": "95;11;103;12;2818;3056"
             }
           ],
@@ -505,7 +516,14 @@
               "typeName": { "value": "string", "loc": "167;50;58;4811;4819" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                { "id": "required" },
+                {
+                  "id": "string-max-length",
+                  "length": { "value": 30, "loc": "167;38;40;4799;4801" },
+                  "loc": "167;25;40;4786;4801"
+                }
+              ],
               "loc": "162;11;168;12;4634;4833"
             }
           ],
@@ -547,7 +565,14 @@
               "typeName": { "value": "string", "loc": "187;50;58;5385;5393" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                { "id": "required" },
+                {
+                  "id": "string-max-length",
+                  "length": { "value": 30, "loc": "187;38;40;5373;5375" },
+                  "loc": "187;25;40;5360;5375"
+                }
+              ],
               "loc": "182;11;188;12;5208;5407"
             }
           ],
@@ -678,7 +703,13 @@
               "typeName": { "value": "date", "loc": "210;23;61;5921;5959" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                {
+                  "id": "string-format",
+                  "format": { "value": "date", "loc": "210;53;59;5951;5957" },
+                  "loc": "210;43;59;5941;5957"
+                }
+              ],
               "loc": "207;11;211;12;5835;5971"
             },
             {
@@ -692,7 +723,16 @@
               },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                {
+                  "id": "string-format",
+                  "format": {
+                    "value": "date-time",
+                    "loc": "215;53;64;6104;6115"
+                  },
+                  "loc": "215;43;64;6094;6115"
+                }
+              ],
               "loc": "212;11;216;12;5983;6129"
             },
             {
@@ -802,7 +842,17 @@
               "typeName": { "value": "exhaustiveParamsQueryEnum" },
               "isPrimitive": false,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                {
+                  "id": "string-enum",
+                  "values": [
+                    { "value": "one", "loc": "268;52;57;7748;7753" },
+                    { "value": "two", "loc": "268;59;64;7755;7760" },
+                    { "value": "three", "loc": "268;66;73;7762;7769" }
+                  ],
+                  "loc": "268;43;74;7739;7770"
+                }
+              ],
               "loc": "265;11;269;12;7634;7784"
             },
             {
@@ -905,7 +955,7 @@
               "typeName": { "value": "string", "loc": "327;33;41;9523;9531" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "323;11;328;12;9398;9545"
             },
             {
@@ -913,7 +963,18 @@
               "typeName": { "value": "exhaustiveParamsPathEnum" },
               "isPrimitive": false,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                { "id": "required" },
+                {
+                  "id": "string-enum",
+                  "values": [
+                    { "value": "one", "loc": "333;52;57;9699;9704" },
+                    { "value": "two", "loc": "333;59;64;9706;9711" },
+                    { "value": "three", "loc": "333;66;73;9713;9720" }
+                  ],
+                  "loc": "333;43;74;9690;9721"
+                }
+              ],
               "loc": "329;11;334;12;9557;9735"
             },
             {
@@ -921,7 +982,7 @@
               "typeName": { "value": "number", "loc": "339;33;41;9872;9880" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "335;11;340;12;9747;9894"
             },
             {
@@ -932,7 +993,7 @@
               },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "341;11;346;12;9906;10055"
             },
             {
@@ -946,7 +1007,7 @@
               },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "347;11;352;12;10067;10216"
             },
             {
@@ -1040,7 +1101,17 @@
               "typeName": { "value": "exhaustiveParamsHeaderEnum" },
               "isPrimitive": false,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                {
+                  "id": "string-enum",
+                  "values": [
+                    { "value": "one", "loc": "398;52;57;11649;11654" },
+                    { "value": "two", "loc": "398;59;64;11656;11661" },
+                    { "value": "three", "loc": "398;66;73;11663;11670" }
+                  ],
+                  "loc": "398;43;74;11640;11671"
+                }
+              ],
               "loc": "395;11;399;12;11533;11685"
             },
             {
@@ -1804,7 +1875,13 @@
           "typeName": { "value": "string", "loc": "536;40;48;15799;15807" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "string-max-length",
+              "length": { "value": 30, "loc": "536;28;30;15787;15789" },
+              "loc": "536;15;30;15774;15789"
+            }
+          ],
           "loc": "536;13;50;15772;15809"
         },
         {
@@ -1820,7 +1897,17 @@
           "typeName": { "value": "productSize", "loc": "503;7;20;14733;14746" },
           "isPrimitive": false,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "string-enum",
+              "values": [
+                { "value": "small", "loc": "503;51;58;14777;14784" },
+                { "value": "medium", "loc": "503;60;68;14786;14794" },
+                { "value": "large", "loc": "503;70;77;14796;14803" }
+              ],
+              "loc": "503;42;78;14768;14804"
+            }
+          ],
           "loc": "503;22;80;14748;14806"
         }
       ],
@@ -1835,7 +1922,21 @@
           "typeName": { "value": "string", "loc": "520;21;29;15256;15264" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "string-max-length",
+              "length": { "value": 30, "loc": "518;26;28;15193;15195" },
+              "loc": "518;13;28;15180;15195"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[0-9a-fA-F]+",
+                "loc": "519;24;38;15220;15234"
+              },
+              "loc": "519;13;38;15209;15234"
+            }
+          ],
           "loc": "517;19;521;12;15166;15276"
         },
         {
@@ -1843,7 +1944,14 @@
           "typeName": { "value": "number", "loc": "522;45;53;15322;15330" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "522;34;35;15311;15312" },
+              "loc": "522;20;35;15297;15312"
+            }
+          ],
           "loc": "522;18;55;15295;15332"
         },
         {
@@ -1851,7 +1959,13 @@
           "typeName": { "value": "number", "loc": "523;46;54;15379;15387" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 5, "loc": "523;35;36;15368;15369" },
+              "loc": "523;21;36;15354;15369"
+            }
+          ],
           "loc": "523;19;56;15352;15389"
         },
         {
@@ -1859,7 +1973,13 @@
           "typeName": { "value": "number", "loc": "524;50;58;15440;15448" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 15, "loc": "524;38;40;15428;15430" },
+              "loc": "524;24;40;15414;15430"
+            }
+          ],
           "loc": "524;22;60;15412;15450"
         },
         {
@@ -1875,7 +1995,17 @@
           "typeName": { "value": "productSize", "loc": "503;7;20;14733;14746" },
           "isPrimitive": false,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "string-enum",
+              "values": [
+                { "value": "small", "loc": "503;51;58;14777;14784" },
+                { "value": "medium", "loc": "503;60;68;14786;14794" },
+                { "value": "large", "loc": "503;70;77;14796;14803" }
+              ],
+              "loc": "503;42;78;14768;14804"
+            }
+          ],
           "loc": "503;22;80;14748;14806"
         }
       ],
@@ -1890,7 +2020,21 @@
           "typeName": { "value": "string", "loc": "520;21;29;15256;15264" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "string-max-length",
+              "length": { "value": 30, "loc": "518;26;28;15193;15195" },
+              "loc": "518;13;28;15180;15195"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[0-9a-fA-F]+",
+                "loc": "519;24;38;15220;15234"
+              },
+              "loc": "519;13;38;15209;15234"
+            }
+          ],
           "loc": "517;19;521;12;15166;15276"
         },
         {
@@ -1898,7 +2042,14 @@
           "typeName": { "value": "number", "loc": "522;45;53;15322;15330" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "522;34;35;15311;15312" },
+              "loc": "522;20;35;15297;15312"
+            }
+          ],
           "loc": "522;18;55;15295;15332"
         },
         {
@@ -1906,7 +2057,13 @@
           "typeName": { "value": "number", "loc": "523;46;54;15379;15387" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 5, "loc": "523;35;36;15368;15369" },
+              "loc": "523;21;36;15354;15369"
+            }
+          ],
           "loc": "523;19;56;15352;15389"
         },
         {
@@ -1914,7 +2071,13 @@
           "typeName": { "value": "number", "loc": "524;50;58;15440;15448" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 15, "loc": "524;38;40;15428;15430" },
+              "loc": "524;24;40;15414;15430"
+            }
+          ],
           "loc": "524;22;60;15412;15450"
         },
         {
@@ -1930,7 +2093,17 @@
           "typeName": { "value": "productSize", "loc": "503;7;20;14733;14746" },
           "isPrimitive": false,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "string-enum",
+              "values": [
+                { "value": "small", "loc": "503;51;58;14777;14784" },
+                { "value": "medium", "loc": "503;60;68;14786;14794" },
+                { "value": "large", "loc": "503;70;77;14796;14803" }
+              ],
+              "loc": "503;42;78;14768;14804"
+            }
+          ],
           "loc": "503;22;80;14748;14806"
         }
       ],
@@ -1960,7 +2133,7 @@
           "typeName": { "value": "string", "loc": "143;51;59;4192;4200" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [{ "id": "required" }],
           "loc": "143;41;61;4182;4202"
         }
       ],
@@ -2006,7 +2179,7 @@
           "typeName": { "value": "number", "loc": "530;33;41;15638;15646" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [{ "id": "required" }],
           "loc": "530;23;43;15628;15648"
         }
       ],
@@ -2029,7 +2202,7 @@
           "typeName": { "value": "number", "loc": "530;33;41;15638;15646" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [{ "id": "required" }],
           "loc": "530;23;43;15628;15648"
         }
       ],

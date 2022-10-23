@@ -68,7 +68,7 @@
               "typeName": { "value": "Pet", "loc": "1032;7;12;27780;27785" },
               "isPrimitive": false,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "54;24;74;10;2215;2794"
             }
           ],
@@ -149,7 +149,7 @@
               "typeName": { "value": "Pet", "loc": "1032;7;12;27780;27785" },
               "isPrimitive": false,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "112;24;132;10;3812;4385"
             }
           ],
@@ -233,7 +233,17 @@
               "typeName": { "value": "findPetsByStatusStatus" },
               "isPrimitive": false,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                {
+                  "id": "string-enum",
+                  "values": [
+                    { "value": "available", "loc": "176;24;35;5646;5657" },
+                    { "value": "pending", "loc": "176;37;46;5659;5668" },
+                    { "value": "sold", "loc": "176;48;54;5670;5676" }
+                  ],
+                  "loc": "176;15;55;5637;5677"
+                }
+              ],
               "loc": "167;11;178;12;5328;5703"
             }
           ],
@@ -407,7 +417,7 @@
               "typeName": { "value": "long", "loc": "279;23;282;14;8398;8478" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "274;11;283;12;8239;8490"
             }
           ],
@@ -488,7 +498,7 @@
               "typeName": { "value": "long", "loc": "328;23;331;14;9672;9752" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "323;11;332;12;9498;9764"
             },
             {
@@ -598,7 +608,7 @@
               },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "376;11;385;12;10845;11093"
             }
           ],
@@ -665,7 +675,16 @@
               "typeName": { "value": "string", "loc": "430;25;33;12204;12212" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [
+                {
+                  "id": "string-format",
+                  "format": {
+                    "value": "binary",
+                    "loc": "431;27;35;12240;12248"
+                  },
+                  "loc": "431;17;35;12230;12248"
+                }
+              ],
               "loc": "426;24;435;10;12087;12300"
             },
             {
@@ -680,7 +699,7 @@
               },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "406;11;415;12;11557;11808"
             },
             {
@@ -1004,7 +1023,7 @@
               },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "533;11;542;12;14945;15215"
             }
           ],
@@ -1043,7 +1062,7 @@
               },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "574;11;583;12;16161;16435"
             }
           ],
@@ -1295,7 +1314,7 @@
               "typeName": { "value": "string", "loc": "771;23;31;21531;21539" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "765;11;773;12;21306;21565"
             }
           ],
@@ -1340,7 +1359,7 @@
               "typeName": { "value": "string", "loc": "811;23;31;22619;22627" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "805;11;813;12;22424;22653"
             }
           ],
@@ -1366,7 +1385,7 @@
               "typeName": { "value": "string", "loc": "853;23;31;23792;23800" },
               "isPrimitive": true,
               "isArray": false,
-              "rules": [],
+              "rules": [{ "id": "required" }],
               "loc": "847;11;855;12;23592;23826"
             }
           ],
@@ -1592,7 +1611,16 @@
           },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "string-format",
+              "format": {
+                "value": "date-time",
+                "loc": "890;23;34;24599;24610"
+              },
+              "loc": "890;13;34;24589;24610"
+            }
+          ],
           "loc": "888;23;891;12;24545;24622"
         },
         {
@@ -1604,7 +1632,17 @@
           "typeName": { "value": "orderStatus" },
           "isPrimitive": false,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "string-enum",
+              "values": [
+                { "value": "placed", "loc": "896;22;30;24775;24783" },
+                { "value": "approved", "loc": "896;32;42;24785;24795" },
+                { "value": "delivered", "loc": "896;44;55;24797;24808" }
+              ],
+              "loc": "896;13;56;24766;24809"
+            }
+          ],
           "loc": "892;21;897;12;24644;24821"
         },
         {
@@ -1829,7 +1867,7 @@
           "typeName": { "value": "string", "loc": "1042;21;29;28041;28049" },
           "isPrimitive": true,
           "isArray": false,
-          "rules": [],
+          "rules": [{ "id": "required" }],
           "loc": "1041;19;1044;12;28019;28094"
         },
         {
@@ -1865,7 +1903,17 @@
           "typeName": { "value": "petStatus" },
           "isPrimitive": false,
           "isArray": false,
-          "rules": [],
+          "rules": [
+            {
+              "id": "string-enum",
+              "values": [
+                { "value": "available", "loc": "1072;22;33;28802;28813" },
+                { "value": "pending", "loc": "1072;35;44;28815;28824" },
+                { "value": "sold", "loc": "1072;46;52;28826;28832" }
+              ],
+              "loc": "1072;13;53;28793;28833"
+            }
+          ],
           "loc": "1069;21;1073;12;28695;28845"
         }
       ],
