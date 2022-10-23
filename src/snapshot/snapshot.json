@@ -451,7 +451,20 @@
               }
             ]
           ],
-          "parameters": [],
+          "parameters": [
+            {
+              "name": { "value": "body", "loc": "155;40;46;4497;4503" },
+              "description": {
+                "value": "The new widget",
+                "loc": "137;26;42;3982;3998"
+              },
+              "typeName": { "value": "createWidgetBody" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "136;24;148;10;3955;4285"
+            }
+          ],
           "loc": "134;7;156;8;3883;4511",
           "meta": [
             {
@@ -566,7 +579,13 @@
                   "loc": "135;24;38;3916;3930"
                 },
                 "verb": { "value": "post", "loc": "134;7;13;3883;3889" },
-                "parameters": [],
+                "parameters": [
+                  {
+                    "name": { "value": "body", "loc": "155;40;46;4497;4503" },
+                    "in": { "value": "body" },
+                    "loc": "136;24;148;10;3955;4285"
+                  }
+                ],
                 "successCode": { "value": 204, "loc": "150;11;20;4320;4329" },
                 "loc": "134;7;156;8;3883;4511"
               }
@@ -762,6 +781,14 @@
             ]
           ],
           "parameters": [
+            {
+              "name": { "value": "body", "loc": "468;40;46;13703;13709" },
+              "typeName": { "value": "exhaustiveParamsBody" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "448;24;461;10;13165;13494"
+            },
             {
               "name": { "value": "query-string", "loc": "261;21;35;7525;7539" },
               "typeName": { "value": "string", "loc": "263;33;41;7600;7608" },
@@ -1243,6 +1270,11 @@
                 },
                 "verb": { "value": "get", "loc": "257;7;12;7417;7422" },
                 "parameters": [
+                  {
+                    "name": { "value": "body", "loc": "468;40;46;13703;13709" },
+                    "in": { "value": "body" },
+                    "loc": "448;24;461;10;13165;13494"
+                  },
                   {
                     "name": {
                       "value": "query-string",
@@ -1919,6 +1951,44 @@
       ],
       "rules": [],
       "loc": "47;27;56;18;1375;1687"
+    },
+    {
+      "name": { "value": "createWidgetBody" },
+      "properties": [
+        {
+          "name": { "value": "name", "loc": "143;33;39;4174;4180" },
+          "typeName": { "value": "string", "loc": "143;51;59;4192;4200" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "143;41;61;4182;4202"
+        }
+      ],
+      "rules": [],
+      "loc": "140;25;144;16;4068;4220"
+    },
+    {
+      "name": { "value": "exhaustiveParamsBody" },
+      "properties": [
+        {
+          "name": { "value": "foo", "loc": "454;19;24;13321;13326" },
+          "typeName": { "value": "string", "loc": "454;36;44;13338;13346" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "454;26;46;13328;13348"
+        },
+        {
+          "name": { "value": "bar", "loc": "455;19;24;13368;13373" },
+          "typeName": { "value": "string", "loc": "455;36;44;13385;13393" },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "455;26;46;13375;13395"
+        }
+      ],
+      "rules": [],
+      "loc": "451;25;457;16;13235;13429"
     },
     {
       "name": { "value": "widgetFoo" },

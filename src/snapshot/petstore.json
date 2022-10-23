@@ -58,7 +58,20 @@
               }
             ]
           ],
-          "parameters": [],
+          "parameters": [
+            {
+              "name": { "value": "body" },
+              "description": {
+                "value": "Update an existent pet in the store",
+                "loc": "55;26;63;2242;2279"
+              },
+              "typeName": { "value": "Pet", "loc": "1032;7;12;27780;27785" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "54;24;74;10;2215;2794"
+            }
+          ],
           "description": [
             { "value": "Update an existing pet", "loc": "51;20;44;2075;2099" },
             {
@@ -126,7 +139,20 @@
               }
             ]
           ],
-          "parameters": [],
+          "parameters": [
+            {
+              "name": { "value": "body" },
+              "description": {
+                "value": "Create a new pet in the store",
+                "loc": "113;26;57;3839;3870"
+              },
+              "typeName": { "value": "Pet", "loc": "1032;7;12;27780;27785" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "112;24;132;10;3812;4385"
+            }
+          ],
           "description": [
             {
               "value": "Add a new pet to the store",
@@ -635,6 +661,14 @@
           ],
           "parameters": [
             {
+              "name": { "value": "body" },
+              "typeName": { "value": "string", "loc": "430;25;33;12204;12212" },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "426;24;435;10;12087;12300"
+            },
+            {
               "name": { "value": "petId", "loc": "407;21;28;11579;11586" },
               "description": {
                 "value": "ID of pet to update",
@@ -690,14 +724,26 @@
               {
                 "name": { "value": "updatePet", "loc": "53;24;35;2179;2190" },
                 "verb": { "value": "put", "loc": "49;7;12;2022;2027" },
-                "parameters": [],
+                "parameters": [
+                  {
+                    "name": { "value": "body" },
+                    "in": { "value": "body" },
+                    "loc": "54;24;74;10;2215;2794"
+                  }
+                ],
                 "successCode": { "value": 200, "loc": "76;11;16;2829;2834" },
                 "loc": "49;7;106;8;2022;3611"
               },
               {
                 "name": { "value": "addPet", "loc": "111;24;32;3779;3787" },
                 "verb": { "value": "post", "loc": "107;7;13;3619;3625" },
-                "parameters": [],
+                "parameters": [
+                  {
+                    "name": { "value": "body" },
+                    "in": { "value": "body" },
+                    "loc": "112;24;132;10;3812;4385"
+                  }
+                ],
                 "successCode": { "value": 200, "loc": "134;11;16;4420;4425" },
                 "loc": "107;7;158;8;3619;5039"
               }
@@ -841,6 +887,11 @@
                 "verb": { "value": "post", "loc": "400;7;13;11385;11391" },
                 "parameters": [
                   {
+                    "name": { "value": "body" },
+                    "in": { "value": "body" },
+                    "loc": "426;24;435;10;12087;12300"
+                  },
+                  {
                     "name": {
                       "value": "petId",
                       "loc": "407;21;28;11579;11586"
@@ -908,7 +959,16 @@
         {
           "name": { "value": "placeOrder", "loc": "489;24;36;13696;13708" },
           "security": [],
-          "parameters": [],
+          "parameters": [
+            {
+              "name": { "value": "body" },
+              "typeName": { "value": "Order", "loc": "870;7;14;24093;24100" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "490;24;508;10;13733;14226"
+            }
+          ],
           "description": [
             {
               "value": "Place an order for a pet",
@@ -1030,7 +1090,13 @@
                   "loc": "489;24;36;13696;13708"
                 },
                 "verb": { "value": "post", "loc": "485;7;13;13532;13538" },
-                "parameters": [],
+                "parameters": [
+                  {
+                    "name": { "value": "body" },
+                    "in": { "value": "body" },
+                    "loc": "490;24;508;10;13733;14226"
+                  }
+                ],
                 "successCode": { "value": 200, "loc": "510;11;16;14261;14266" },
                 "loc": "485;7;524;8;13532;14617"
               }
@@ -1093,7 +1159,20 @@
         {
           "name": { "value": "createUser", "loc": "600;24;36;16837;16849" },
           "security": [],
-          "parameters": [],
+          "parameters": [
+            {
+              "name": { "value": "body" },
+              "description": {
+                "value": "Created user object",
+                "loc": "602;26;47;16901;16922"
+              },
+              "typeName": { "value": "User", "loc": "974;7;13;26474;26480" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "601;24;620;10;16874;17412"
+            }
+          ],
           "description": [
             { "value": "Create user", "loc": "598;20;33;16728;16741" },
             {
@@ -1116,7 +1195,16 @@
             "loc": "645;24;50;18124;18150"
           },
           "security": [],
-          "parameters": [],
+          "parameters": [
+            {
+              "name": { "value": "body" },
+              "typeName": { "value": "User", "loc": "974;7;13;26474;26480" },
+              "isPrimitive": false,
+              "isArray": true,
+              "rules": [],
+              "loc": "646;24;657;10;18175;18443"
+            }
+          ],
           "description": [
             {
               "value": "Creates list of users with given input array",
@@ -1232,6 +1320,18 @@
           "security": [],
           "parameters": [
             {
+              "name": { "value": "body" },
+              "description": {
+                "value": "Update an existent user in the store",
+                "loc": "816;26;64;22715;22753"
+              },
+              "typeName": { "value": "User", "loc": "974;7;13;26474;26480" },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [],
+              "loc": "815;24;834;10;22688;23243"
+            },
+            {
               "name": { "value": "username", "loc": "806;21;31;22446;22456" },
               "description": {
                 "value": "name that need to be deleted",
@@ -1291,7 +1391,13 @@
                   "loc": "600;24;36;16837;16849"
                 },
                 "verb": { "value": "post", "loc": "596;7;13;16673;16679" },
-                "parameters": [],
+                "parameters": [
+                  {
+                    "name": { "value": "body" },
+                    "in": { "value": "body" },
+                    "loc": "601;24;620;10;16874;17412"
+                  }
+                ],
                 "successCode": { "value": 201, "loc": "622;11;20;17447;17456" },
                 "loc": "596;7;638;8;16673;17883"
               }
@@ -1310,7 +1416,13 @@
                   "loc": "645;24;50;18124;18150"
                 },
                 "verb": { "value": "post", "loc": "641;7;13;17927;17933" },
-                "parameters": [],
+                "parameters": [
+                  {
+                    "name": { "value": "body" },
+                    "in": { "value": "body" },
+                    "loc": "646;24;657;10;18175;18443"
+                  }
+                ],
                 "successCode": { "value": 200, "loc": "659;11;16;18478;18483" },
                 "loc": "641;7;678;8;17927;18996"
               }
@@ -1398,6 +1510,11 @@
                 },
                 "verb": { "value": "put", "loc": "799;7;12;22213;22218" },
                 "parameters": [
+                  {
+                    "name": { "value": "body" },
+                    "in": { "value": "body" },
+                    "loc": "815;24;834;10;22688;23243"
+                  },
                   {
                     "name": {
                       "value": "username",

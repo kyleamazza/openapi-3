@@ -1,6 +1,6 @@
 import { major } from 'semver';
 import { singular } from 'pluralize';
-import { camel, pascal } from 'case';
+import { camel, kebab, pascal } from 'case';
 
 import { AST, DocumentNode, parse } from '@basketry/ast';
 import * as OAS3 from './types';
@@ -177,9 +177,11 @@ export class OAS3Parser {
         const verbLoc = pathItem.keyRange(verb);
         const methodLoc = pathItem.propRange(verb)!;
 
+        const methodName = operation.operationId?.value || 'unknown';
+
         const httpMethod: HttpMethod = {
           name: {
-            value: operation.operationId?.value || 'unknown',
+            value: methodName,
             loc: operation.operationId
               ? range(operation.operationId)
               : undefined,
@@ -189,6 +191,21 @@ export class OAS3Parser {
           successCode: this.parseResponseCode(verb, operation),
           loc: methodLoc,
         };
+
+        const bodyParamName = this.parseBodyParamName(operation);
+        const body = this.parseRequestBody(
+          operation.requestBody,
+          methodName,
+          bodyParamName,
+        );
+
+        if (body) {
+          httpMethod.parameters.push({
+            name: body.name,
+            in: { value: 'body' },
+            loc: body.loc,
+          });
+        }
 
         for (const param of [
           ...(operation.parameters || []),
@@ -534,15 +551,32 @@ export class OAS3Parser {
       ...commonParameters,
       ...(operation.parameters || []),
     ];
-    if (!parametersOrRefs.length) return [];
 
     const parameters = parametersOrRefs
       .map((p) => OAS3.resolveParam(this.schema.node, p))
       .filter((p): p is OAS3.ParameterNode => !!p);
 
-    return parameters.map((p) =>
+    const nonBodyParams = parameters.map((p) =>
       this.parseParameter(p, operation.operationId?.value || ''),
     );
+
+    const bodyParam = this.parseRequestBody(
+      operation.requestBody,
+      operation.operationId?.value || '',
+      this.parseBodyParamName(operation),
+    );
+
+    return bodyParam ? [bodyParam, ...nonBodyParams] : nonBodyParams;
+  }
+
+  private parseBodyParamName(operation: OAS3.OperationNode): Literal<string> {
+    const meta = this.parseMeta(operation);
+
+    const value = meta?.find(
+      (m) => kebab(m.key.value) === 'codegen-request-body-name',
+    )?.value;
+
+    return typeof value?.value === 'string' ? value : { value: 'body' };
   }
 
   private parseParameter(
@@ -585,6 +619,48 @@ export class OAS3Parser {
         rules: this.parseRules(resolved, param.required?.value),
         loc: range(param),
         meta: this.parseMeta(param),
+      };
+    }
+  }
+
+  private parseRequestBody(
+    bodyOrRef: OAS3.RefNode | OAS3.RequestBodyNode | undefined,
+    methodName: string,
+    paramName: Literal<string>,
+  ): Parameter | undefined {
+    if (!bodyOrRef) return;
+
+    const body = this.resolve(bodyOrRef, OAS3.RequestBodyNode);
+
+    const schemaOrRef = this.getSchemaOrRef(body.content);
+    if (!schemaOrRef) return;
+
+    const schema = OAS3.resolveSchema(this.schema.node, schemaOrRef);
+    if (!schema) return;
+
+    const x = this.parseType(schemaOrRef, paramName.value, methodName);
+
+    if (x.isPrimitive) {
+      return {
+        name: paramName,
+        description: this.parseDescription(undefined, body.description),
+        typeName: x.typeName,
+        isPrimitive: x.isPrimitive,
+        isArray: x.isArray,
+        rules: this.parseRules(schema, body.required?.value),
+        loc: range(body),
+        meta: this.parseMeta(body),
+      };
+    } else {
+      return {
+        name: paramName,
+        description: this.parseDescription(undefined, body.description),
+        typeName: x.typeName,
+        isPrimitive: x.isPrimitive,
+        isArray: x.isArray,
+        rules: this.parseRules(schema, body.required?.value),
+        loc: range(body),
+        meta: this.parseMeta(body),
       };
     }
   }
@@ -929,10 +1005,10 @@ export class OAS3Parser {
     return;
   }
 
-  private getResponseSchemaOrRef(
-    response: OAS3.ResponseNode,
+  private getSchemaOrRef(
+    content: OAS3.MediaTypeIndexNode | undefined,
   ): OAS3.SchemaNodeUnion | OAS3.RefNode | undefined {
-    const keys = response.content?.keys;
+    const keys = content?.keys;
     if (!keys?.length) return undefined;
 
     if (keys.length > 1) {
@@ -941,13 +1017,13 @@ export class OAS3Parser {
         code: 'openapi-3/unsupported-feature',
         message:
           'Multiple content types are not yet supported. The first content type will be used and all following content types will be ignored.',
-        range: response.content!.loc,
+        range: content!.loc,
         severity: 'warning',
         sourcePath: this.sourcePath,
       });
     }
 
-    const mediaType = response.content?.read(keys[0]);
+    const mediaType = content?.read(keys[0]);
 
     return mediaType?.schema;
   }
@@ -966,7 +1042,7 @@ export class OAS3Parser {
         ? success.$ref.value.substring(prefix.length)
         : undefined;
 
-    const schemaOrRef = this.getResponseSchemaOrRef(response);
+    const schemaOrRef = this.getSchemaOrRef(response.content);
 
     if (!schemaOrRef) return;
 
