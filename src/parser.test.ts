@@ -155,7 +155,8 @@ describe('parser', () => {
   it('creates a valid service from the example Pet Store schema', async () => {
     // ARRANGE
 
-    const sourcePath = 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.json';
+    const sourcePath =
+      'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.json';
     const sourceContent = await getText(sourcePath);
 
     const service = parser(sourceContent, sourcePath).service;

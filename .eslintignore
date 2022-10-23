@@ -1,7 +1,7 @@
 coverage
 node_modules
-src/snapshot/example.oas2.json
-src/snapshot/petstore.oas2.json
+src/snapshot/example.oas3.json
+src/snapshot/petstore.oas3.json
 src/snapshot/snapshot.json
 src/snapshot/petstore.json
 
